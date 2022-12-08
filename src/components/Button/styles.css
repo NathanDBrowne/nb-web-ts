@@ -1,0 +1,84 @@
+.HeroButton {
+  color: #fff;
+  border-radius: 50px;
+  white-space: nowrap;
+  outline: none;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.HeroButton:hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.HeroButtonWrapper {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Arrow {
+  margin-left: 8px;
+  font-size: 20px;
+}
+
+.ScrollButton {
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+.ScrollButton:hover {
+  color: aquamarine;
+  text-shadow: -1px -1px 3px blue, 1px -1px 3px blue, -1px 1px 3px blue,
+    1px 1px 3px blue;
+  transition: all 0.2s ease-in-out;
+}
+
+.Logo {
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: -1px -1px 3px black, 1px -1px 3px black, -1px 1px 3px black,
+    1px 1px 3px black;
+  transition: all 0.5s ease-in-out;
+}
+.Logo:hover {
+  cursor: pointer;
+  color: aquamarine;
+  transition: all 0.5s ease-in-out;
+  text-shadow: -1px -1px 3px blue, 1px -1px 3px blue, -1px 1px 3px blue,
+    1px 1px 3px blue;
+}
+
+.BtnWrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ProjectButton {
+  border-radius: 50px;
+  padding: 14px 48px;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  background: #fff;
+  box-shadow: -1px -1px 3px #7e42ff, 1px -1px 3px #7e42ff, -1px 1px 3px #7e42ff,
+    1px 1px 3px #7e42ff;
+}
+.ProjectButton:hover {
+  transition: all 0.2s ease-in-out;
+  color: #fff;
+  background: #7e42ff;
+  box-shadow: -1px -1px 3px #fff, 1px -1px 3px #fff, -1px 1px 3px #fff,
+    1px 1px 3px #fff;
+}

@@ -1,0 +1,144 @@
+/*div*/
+.ProjectContainerLight {
+  color: #101010;
+  background-color: #fff;
+}
+
+/*div*/
+.ProjectContainerDark {
+  color: #fff;
+  background-color: #101010;
+}
+
+@media screen and (max-width: 810px) {
+  .ProjectContainerDark {
+    padding: 210px 0;
+  }
+  .ProjectContainerLight {
+    padding: 210px 0;
+  }
+}
+
+/* div */
+.ProjectRowImgStart {
+  display: grid;
+  grid-auto-columns: minmax(auto, 1fr);
+  align-items: center;
+  grid-template-areas: "img txt";
+}
+
+/* div */
+.ProjectRow {
+  display: grid;
+  grid-auto-columns: minmax(auto, 1fr);
+  align-items: center;
+  grid-template-areas: "txt img";
+}
+/* div */
+.Column1 {
+  margin-bottom: 15px;
+  padding: 0 15px;
+  grid-area: txt;
+}
+
+/* div */
+.Column2 {
+  margin-bottom: 15px;
+  padding: 0 15px;
+  grid-area: img;
+}
+/* div */
+.ImgWrap {
+  max-width: 555px;
+  height: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .ProjectRowImgStart {
+    grid-template-areas: "txt" "img";
+  }
+  .ProjectRow {
+    grid-template-areas: "txt txt" "img img";
+  }
+  .ImgWrap {
+    max-width: 400px;
+    height: 500px;
+  }
+}
+
+/* div */
+.ProjectWrapper {
+  display: grid;
+  z-index: 1;
+  height: 700px;
+  width: 100%;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 24px;
+  justify-content: center;
+}
+
+/*p*/
+.TopLine {
+  color: #7e42ff;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* h1 */
+.DarkH1 {
+  margin-bottom: 24px;
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 600;
+  color: #010606;
+}
+.LightH1 {
+  margin-bottom: 24px;
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 600;
+  color: #f7f8fa;
+}
+
+@media screen and (max-width: 480px) {
+  .LightH1 {
+    font-size: 32px;
+  }
+  .DarkH1 {
+    font-size: 32px;
+  }
+}
+
+/* p */
+.Subtitle {
+  max-width: 440px;
+  margin-bottom: 35px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* div */
+.BtnWrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* img */
+.Img {
+  width: 100%;
+  margin: 0 0 10px 0;
+  padding-right: 0;
+}
+
+/* div */
+.TextWrapper {
+  max-width: 540px;
+  padding-top: 0;
+  padding-bottom: 60px;
+}
