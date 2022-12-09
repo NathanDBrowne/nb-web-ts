@@ -44,7 +44,7 @@
 
 /* applies to h1 */
 .HeroH1 {
-  color: #fff;
+  color: #c5c7d8;
   font-size: 48px;
   text-align: center;
   text-shadow: 0 0 10px #101010;
@@ -52,8 +52,8 @@
 /* applies to p */
 .HeroP {
   margin-top: 24px;
-  color: #fff;
-  font-size: 24px;
+  color: #c5c7d8;
+  font-size: 34px;
   text-align: center;
   max-width: 600px;
   text-shadow: 0 0 10px #101010;
@@ -75,12 +75,4 @@
   .HeroP {
     font-size: 18px;
   }
-}
-
-/* applies to div */
-.HeroBtnWrapper {
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }

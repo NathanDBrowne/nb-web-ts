@@ -1,3 +1,4 @@
+import { fontWeight } from "@mui/system";
 import { ProjectButton } from "../Button";
 import "./styles.css";
 
@@ -34,7 +35,18 @@ const ProjectCard = ({
                 <p className="TopLine">{topline}</p>
                 <h1 className={darkMode ? "LightH1" : "DarkH1"}>{headline}</h1>
                 <p className="Subtitle">{description}</p>
-                <ProjectButton text={buttonLabel} to={buttonAddr} />
+                <ProjectButton
+                  text={buttonLabel}
+                  to={buttonAddr}
+                  style={
+                    imgStart
+                      ? { background: "#101010" }
+                      : {
+                          background: "#fff",
+                          color: "#101010",
+                        }
+                  }
+                />
               </div>
             </div>
             <div className="Column2">

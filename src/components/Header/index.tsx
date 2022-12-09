@@ -50,7 +50,7 @@ export default function Header() {
             color: "transparent",
           }}
         >
-          <ScrollLogo to="hero" text="n@te(browne)~/web$" />
+          <ScrollLogo to="hero" text="Nate Browne" />
           <div className="App-link">
             <ScrollButton text="Home" to="hero" />
           </div>

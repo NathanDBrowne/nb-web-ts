@@ -1,5 +1,4 @@
 import { Link as LinkS } from "react-scroll";
-import styled from "styled-components";
 
 import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 import { useState } from "react";
@@ -8,6 +7,7 @@ import "./styles.css";
 type ButtonProps = {
   text: string;
   to: string;
+  style?: any;
 };
 export const HeroButton = ({ text, to }: ButtonProps) => {
   const [hover, setHover] = useState(false);
@@ -50,14 +50,15 @@ export const ScrollLogo = ({ text, to }: ButtonProps) => {
   );
 };
 
-export const ProjectButton = ({ text, to }: ButtonProps) => {
+export const ProjectButton = ({ text, to, style }: ButtonProps) => {
   return (
-    <div className="BtnWrap">
+    <div>
       <a
         className="ProjectButton"
         href={to}
         target="_blank"
         rel="noopener noreferrer"
+        style={style}
       >
         {text}
       </a>

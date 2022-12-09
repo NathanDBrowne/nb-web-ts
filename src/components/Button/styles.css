@@ -1,18 +1,25 @@
 .HeroButton {
-  color: #fff;
   border-radius: 50px;
+  background: #010606;
   white-space: nowrap;
+  padding: 14px 48px;
+  color: #c5c7d8;
+  font-size: 20px;
   outline: none;
-  font-size: 30px;
   border: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 .HeroButton:hover {
   transition: all 0.2s ease-in-out;
+  /* background: #c5c7d8; */
+  box-shadow: -1px -1px 3px #473bf0, 1px -1px 3px #473bf0, -1px 1px 3px #473bf0,
+    1px 1px 3px #473bf0;
+  color: #fff;
+  font-weight: 600;
 }
 
 .HeroButtonWrapper {
@@ -28,19 +35,19 @@
 }
 
 .ScrollButton {
-  color: #fff;
+  color: #c5c7d8;
   transition: all 0.2s ease-in-out;
 }
 .ScrollButton:hover {
-  color: aquamarine;
-  text-shadow: -1px -1px 3px blue, 1px -1px 3px blue, -1px 1px 3px blue,
-    1px 1px 3px blue;
+  color: #fff;
+  text-shadow: -1px -1px 3px #473bf0, 1px -1px 3px #473bf0, -1px 1px 3px #473bf0,
+    1px 1px 3px #473bf0;
   transition: all 0.2s ease-in-out;
 }
 
 .Logo {
   font-size: 30px;
-  color: #fff;
+  color: #c5c7d8;
   text-decoration: none;
   text-shadow: -1px -1px 3px black, 1px -1px 3px black, -1px 1px 3px black,
     1px 1px 3px black;
@@ -48,15 +55,10 @@
 }
 .Logo:hover {
   cursor: pointer;
-  color: aquamarine;
+  color: #fff;
   transition: all 0.5s ease-in-out;
-  text-shadow: -1px -1px 3px blue, 1px -1px 3px blue, -1px 1px 3px blue,
-    1px 1px 3px blue;
-}
-
-.BtnWrap {
-  display: flex;
-  justify-content: flex-start;
+  text-shadow: -1px -1px 3px #473bf0, 1px -1px 3px #473bf0, -1px 1px 3px #473bf0,
+    1px 1px 3px #473bf0;
 }
 
 .ProjectButton {
@@ -67,18 +69,21 @@
   border: none;
   cursor: pointer;
   display: flex;
+  color: #c5c7d8;
   justify-content: center;
   text-decoration: none;
   align-items: center;
   transition: all 0.2s ease-in-out;
-  background: #fff;
-  box-shadow: -1px -1px 3px #7e42ff, 1px -1px 3px #7e42ff, -1px 1px 3px #7e42ff,
-    1px 1px 3px #7e42ff;
+  background: #101010;
+  border-style: solid;
+  border-width: 1px;
+  font-weight: 300;
 }
 .ProjectButton:hover {
   transition: all 0.2s ease-in-out;
-  color: #fff;
-  background: #7e42ff;
-  box-shadow: -1px -1px 3px #fff, 1px -1px 3px #fff, -1px 1px 3px #fff,
-    1px 1px 3px #fff;
+  border-style: hidden;
+  color: #c5c7d8;
+  font-weight: 600;
+  box-shadow: -1px -1px 3px #473bf0, 1px -1px 3px #473bf0, -1px 1px 3px #473bf0,
+    1px 1px 3px #473bf0;
 }

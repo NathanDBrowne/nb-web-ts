@@ -57,14 +57,14 @@
 }
 
 /* img */
-img {
+.StackImg {
   height: 160px;
   width: 160px;
   margin-bottom: 10px;
 }
 
 /* h1 */
-h1 {
+.StackH1 {
   font-size: 2.5rem;
   color: #fff;
   text-align: center;
@@ -77,13 +77,13 @@ h1 {
   }
 }
 /* h2 */
-h2 {
+.StackH2 {
   font-size: 1rem;
   margin-bottom: 10px;
 }
 
 /* p */
-p {
+StackP {
   font-size: 1rem;
   text-align: center;
 }

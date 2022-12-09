@@ -22,7 +22,8 @@
 /* div */
 .ProjectRowImgStart {
   display: grid;
-  grid-auto-columns: minmax(auto, 1fr);
+  grid-auto-columns: minmax(auto, 0.8fr);
+  padding: 20px;
   align-items: center;
   grid-template-areas: "img txt";
 }
@@ -30,8 +31,10 @@
 /* div */
 .ProjectRow {
   display: grid;
+  text-align: left;
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
+  justify-content: left;
   grid-template-areas: "txt img";
 }
 /* div */
@@ -39,6 +42,7 @@
   margin-bottom: 15px;
   padding: 0 15px;
   grid-area: txt;
+  align-items: right;
 }
 
 /* div */
@@ -102,7 +106,7 @@
   margin-bottom: 24px;
   font-size: 48px;
   line-height: 1.1;
-  font-weight: 600;
+  font-weight: 500;
   color: #f7f8fa;
 }
 
@@ -121,12 +125,6 @@
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
-}
-
-/* div */
-.BtnWrap {
-  display: flex;
-  justify-content: flex-start;
 }
 
 /* img */
