@@ -27,6 +27,8 @@ function Footer() {
               <a
                 className="FooterScrollLink"
                 href="https://github.com/NathanDBrowne"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 GitHub
               </a>
@@ -36,10 +38,17 @@ function Footer() {
               <a
                 className="FooterLink"
                 href="https://www.linkedin.com/in/nathan-b-42549413a/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 LinkedIn
               </a>
-              <a className="FooterLink" href="https://t.me/FreeweightNate">
+              <a
+                className="FooterLink"
+                href="https://t.me/FreeweightNate"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Telegram
               </a>
             </div>
@@ -48,22 +57,40 @@ function Footer() {
       </div>
       <div className="SocialMedia">
         <div className="SocialMediaWrap">
-          <h1 className="SocialLogo">Nate Browne</h1>
+          <LinkS
+            className="SocialLogo"
+            to="hero"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-80}
+          >
+            Nate Browne 2023
+          </LinkS>
           <p className="WebsiteRights">Site made with React.js</p>
           <div className="SocialIcons">
             <a
               className="SocialIconLink"
               href="https://github.com/NathanDBrowne"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <GitHubIcon />
             </a>
             <a
               className="SocialIconLink"
               href="https://www.linkedin.com/in/nathan-b-42549413a/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <LinkedInIcon />
             </a>
-            <a className="SocialIconLink" href="https://t.me/FreeweightNate">
+            <a
+              className="SocialIconLink"
+              href="https://t.me/FreeweightNate"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <TelegramIcon />
             </a>
           </div>
