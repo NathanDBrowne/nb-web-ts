@@ -1,21 +1,25 @@
 /*div*/
 .ProjectContainerLight {
   color: #101010;
+  align-items: center;
   background-color: #fff;
 }
 
 /*div*/
 .ProjectContainerDark {
   color: #fff;
+  align-items: center;
   background-color: #101010;
 }
 
 @media screen and (max-width: 810px) {
   .ProjectContainerDark {
-    padding: 210px 0;
+    padding-top: 10px;
+    padding-bottom: 350px;
   }
   .ProjectContainerLight {
-    padding: 210px 0;
+    padding-top: 10px;
+    padding-bottom: 350px;
   }
 }
 
@@ -31,10 +35,9 @@
 /* div */
 .ProjectRow {
   display: grid;
-  text-align: left;
-  grid-auto-columns: minmax(auto, 1fr);
+  text-align: right;
+  grid-auto-columns: minmax(auto, 0.8fr);
   align-items: center;
-  justify-content: left;
   grid-template-areas: "txt img";
 }
 /* div */
@@ -42,7 +45,6 @@
   margin-bottom: 15px;
   padding: 0 15px;
   grid-area: txt;
-  align-items: right;
 }
 
 /* div */
@@ -57,7 +59,7 @@
   height: 400px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 810px) {
   .ProjectRowImgStart {
     grid-template-areas: "txt" "img";
   }

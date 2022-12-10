@@ -1,4 +1,3 @@
-import { fontWeight } from "@mui/system";
 import { ProjectButton } from "../Button";
 import "./styles.css";
 

@@ -1,10 +1,10 @@
 /* div */
 .StackContainer {
-  height: 1300px;
+  height: 1400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: #101010;
+  /* justify-content: center; */
+  background: #c5c7d8;
 }
 
 /* div */
@@ -20,15 +20,15 @@
 }
 @media screen and (max-width: 1000px) {
   .StackContainer {
-    height: 2000px;
+    height: 2250px;
   }
   .StackWrapper {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 700px) {
   .StackContainer {
-    height: 3400px;
+    height: 3900px;
   }
   .StackWrapper {
     grid-template-columns: 1fr;
@@ -44,7 +44,7 @@
   justify-content: flex-start;
   align-items: center;
   border-radius: 3px;
-  max-height: 340px;
+  height: 340px;
   padding: 30px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
@@ -66,7 +66,8 @@
 /* h1 */
 .StackH1 {
   font-size: 2.5rem;
-  color: #fff;
+  color: #101010;
+  font-weight: 300;
   text-align: center;
   margin-bottom: 32px;
   margin-top: 64px;

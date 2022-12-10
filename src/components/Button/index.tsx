@@ -9,6 +9,7 @@ type ButtonProps = {
   to: string;
   style?: any;
 };
+
 export const HeroButton = ({ text, to }: ButtonProps) => {
   const [hover, setHover] = useState(false);
 

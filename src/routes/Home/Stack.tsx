@@ -17,7 +17,7 @@ import Tile from "../../components/Tiles/Tile";
 const Stack = () => {
   return (
     <div className="StackContainer" id="stack">
-      <h1>My Stack</h1>
+      <h1 className="StackH1">My Stack</h1>
       <div className="StackWrapper">
         <Tile
           icon={IconPython}

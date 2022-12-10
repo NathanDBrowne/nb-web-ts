@@ -1,8 +1,9 @@
-import React from "react";
 import "./styles.css";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TelegramIcon from "@mui/icons-material/Telegram";
+
+import { Link as LinkS } from "react-scroll";
 
 function Footer() {
   return (
@@ -11,85 +12,60 @@ function Footer() {
         <div className="FooterLinksContainer">
           <div className="FooterLinksWrapper">
             <div className="FooterLinkItems">
-              <div className="FooterLinkTitle">
-                {<p style={{ color: "#38de21" }}>Reach Out</p>}
-              </div>
-              <div>+44(0)7312 267 345</div>
-              <div>nathandbrowne@gmail.com</div>
+              <h1 className="FooterLinkTitle">Reach Out</h1>
+              <p className="FooterScrollLink">+44(0)7312 267 345</p>
+              <p className="FooterScrollLink">nathandbrowne@gmail.com</p>
             </div>
             <div className="FooterLinkItems">
-              <div className="FooterLinkTitle">
-                {<p style={{ color: "#ff0055" }}>About Me</p>}
-              </div>
-              <div className="FooterScrollLink">Projects</div>
-              <div className="FooterScrollLink">My Stack</div>
-              <div
-              // className="FooterLink"
-              // href="https:github.com/NathanDBrowne"
-              // target="_blank"
-              // rel="noopener noreferrer"
+              <h1 className="FooterLinkTitle">About Me</h1>
+              <LinkS className="FooterScrollLink" to="projects">
+                Projects
+              </LinkS>
+              <LinkS className="FooterScrollLink" to="stack">
+                My Stack
+              </LinkS>
+              <a
+                className="FooterScrollLink"
+                href="https://github.com/NathanDBrowne"
               >
                 GitHub
-              </div>
+              </a>
             </div>
-          </div>
-          <div className="FooterLinksWrapper">
             <div className="FooterLinkItems">
-              <div className="FooterLinkTitle">
-                {<p style={{ color: "#7e42ff" }}>Social Media</p>}
-              </div>
-              <div
-              // className="FooterLink"
-              // href="https://www.linkedin.com/in/nathan-b-42549413a/"
-              // target="_blank"
-              // rel="noopener noreferrer"
+              <h1 className="FooterLinkTitle">Social Media</h1>
+              <a
+                className="FooterLink"
+                href="https://www.linkedin.com/in/nathan-b-42549413a/"
               >
                 LinkedIn
-              </div>
-              <div
-              // className="FooterLink"
-              // href="https://t.me/FreeweightNate"
-              // target="_blank"
-              // rel="noopener noreferrer"
-              >
+              </a>
+              <a className="FooterLink" href="https://t.me/FreeweightNate">
                 Telegram
-              </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
       <div className="SocialMedia">
         <div className="SocialMediaWrap">
-          <div className="SocialLogo">Nate Browne</div>
-          <div className="WebsiteRights">This site was built with React</div>
+          <h1 className="SocialLogo">Nate Browne</h1>
+          <p className="WebsiteRights">Site made with React.js</p>
           <div className="SocialIcons">
-            <div
-            // className="SocialIconLink"
-            // href="https://github.com/NathanDBrowne"
-            // target="_blank"
-            // rel="noreferrer noopener"
-            // aria-label="GitHub"
+            <a
+              className="SocialIconLink"
+              href="https://github.com/NathanDBrowne"
             >
               <GitHubIcon />
-            </div>
-            <div
-            // className="SocialIconLink"
-            // href="https://www.linkedin.com/in/nathan-b-42549413a/"
-            // target="_blank"
-            // rel="noreferrer noopener"
-            // aria-label="LinkedIn"
+            </a>
+            <a
+              className="SocialIconLink"
+              href="https://www.linkedin.com/in/nathan-b-42549413a/"
             >
               <LinkedInIcon />
-            </div>
-            <div
-            // className="SocialIconLink"
-            // href="https://t.me/FreeweightNate"
-            // target="_blank"
-            // rel="noreferrer noopener"
-            // aria-label="Telegram"
-            >
+            </a>
+            <a className="SocialIconLink" href="https://t.me/FreeweightNate">
               <TelegramIcon />
-            </div>
+            </a>
           </div>
         </div>
       </div>

@@ -11,9 +11,9 @@ type TileProps = {
 const Tile = ({ icon, title, description }: TileProps) => {
   return (
     <div className="StackCard">
-      <img alt="" src={icon} />
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <img className="StackImg" alt="" src={icon} />
+      <h2 className="StackH2">{title}</h2>
+      <p className="StackP">{description}</p>
     </div>
   );
 };
