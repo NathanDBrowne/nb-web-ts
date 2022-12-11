@@ -59,6 +59,9 @@
 .MobileIcon {
   display: none;
 }
+.MobileIcon:hover {
+  color: #fff;
+}
 @media screen and (max-width: 768px) {
   .MobileIcon {
     display: block;
@@ -68,7 +71,6 @@
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
-    color: #eee;
   }
   .NavBtn {
     display: none;

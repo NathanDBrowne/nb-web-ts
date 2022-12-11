@@ -1,4 +1,5 @@
 import { Link as LinkS } from "react-scroll";
+import { Link as LinkR } from "react-router-dom";
 
 import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 import { useState } from "react";
@@ -33,6 +34,27 @@ export const HeroButton = ({ text, to }: ButtonProps) => {
       >
         {text} {hover ? <MdArrowForward /> : <MdKeyboardArrowRight />}
       </LinkS>
+    </div>
+  );
+};
+
+export const HeroButtonRoute = ({ text, to }: ButtonProps) => {
+  const [hover, setHover] = useState(false);
+
+  const onHover = () => {
+    setHover(!hover);
+  };
+
+  return (
+    <div className="HeroButtonWrapper">
+      <LinkR
+        to={to}
+        className="HeroButton"
+        onMouseEnter={onHover}
+        onMouseLeave={onHover}
+      >
+        {text} {hover ? <MdArrowForward /> : <MdKeyboardArrowRight />}
+      </LinkR>
     </div>
   );
 };

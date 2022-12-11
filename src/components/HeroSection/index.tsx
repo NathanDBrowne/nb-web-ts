@@ -1,10 +1,35 @@
 import "./styles.css";
 
-import { HeroButton } from "../Button";
+import { HeroButton, HeroButtonRoute } from "../Button";
 
 import Video from "../../media/videos/stars.mp4";
 
-const HeroSection = () => {
+type HeroProps = {
+  title: string;
+  text: string;
+  scrolls: boolean;
+  buttonTo: string;
+  buttonText: string;
+};
+
+const HeroSection = ({
+  title,
+  text,
+  scrolls,
+  buttonText,
+  buttonTo,
+}: HeroProps) => {
+  let btnElem;
+  switch (scrolls) {
+    case true:
+      btnElem = HeroButton;
+      break;
+
+    default:
+      btnElem = HeroButtonRoute;
+      break;
+  }
+
   return (
     <div className="HeroContainer" id={"hero"}>
       <div className="HeroBg">
@@ -18,15 +43,10 @@ const HeroSection = () => {
               "-1px -1px 6px #000, 1px -1px 6px #000, -1px 1px 6px #000, 1px 1px 6px #000",
           }}
         >
-          Hi. I'm Nate.
+          {title}
         </h1>
-        <p className="HeroP">
-          I'm a UK-based developer. This site is built to showcase my work but
-          also acts as a nice repo for useful tools (in the codec)
-        </p>
-        <h2>
-          <HeroButton text="My Work" to="projects" />
-        </h2>
+        <p className="HeroP">{text}</p>
+        <h2>{btnElem({ text: buttonText, to: buttonTo })}</h2>
       </div>
     </div>
   );

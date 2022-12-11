@@ -17,7 +17,13 @@ const App = () => {
     <div>
       <Header toggle={toggle} />
       <SideBar isOpen={isOpen} toggle={toggle} />
-      <HeroSection />
+      <HeroSection
+        title="Hi. I'm Nate."
+        text="I'm a UK-based developer. This site is built to showcase my work but also acts as a nice repo for useful tools (in the codec)"
+        scrolls={true}
+        buttonText="See my work"
+        buttonTo="projects"
+      />
       <Projects id="projects" />
       <Stack />
       <Footer />

@@ -40,11 +40,7 @@ export default function Header({ toggle }: { toggle: any }) {
           </div>
           <ul className="NavMenu">
             <li className="NavItem">
-              <ScrollLink
-                className="GeneralLink"
-                to="hero"
-                text="Nate Browne"
-              />
+              <ScrollLink className="GeneralLink" to="hero" text="Home" />
             </li>
             <li className="NavItem">
               <ScrollLink

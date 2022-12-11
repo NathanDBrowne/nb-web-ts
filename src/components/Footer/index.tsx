@@ -13,8 +13,8 @@ function Footer() {
           <div className="LinksWrapper">
             <div className="LinkItems">
               <h1 className="LinkTitle">Reach Out</h1>
-              <a className="FooterLink">+44(0)7312 267 345</a>
-              <a className="FooterLink">nathandbrowne@gmail.com</a>
+              <div className="FooterLink">+44(0)7312 267 345</div>
+              <div className="FooterLink">nathandbrowne@gmail.com</div>
             </div>
             <div className="LinkItems">
               <h1 className="LinkTitle">About Me</h1>

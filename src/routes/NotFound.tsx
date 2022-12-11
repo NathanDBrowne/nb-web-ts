@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import HeroSection from "../components/HeroSection";
 
 const NotFound = () => {
   return (
-    <div className="App">
-      <p style={{ fontWeight: 700 }}>404 - How did you even get here?</p>
-      <h2>Do kindly let me know if I've made a mistake somewhere.</h2>
-      <Link className="App-link" to="/home">
-        Back to reality
-      </Link>
-    </div>
+    <HeroSection
+      title="Uh oh: 404"
+      text="How did you even get here? Do kindly tell me if I've made a mistake somewhere."
+      scrolls={false}
+      buttonText="Back to reality"
+      buttonTo="/"
+    />
   );
 };
 

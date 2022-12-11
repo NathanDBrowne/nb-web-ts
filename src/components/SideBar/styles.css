@@ -27,69 +27,9 @@
   outline: none;
 }
 
-/* LinkS */
-.SidebarLink {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  text-decoration: none;
-  list-style: none;
-  transition: 0.2s ease-in-out;
-  color: #c5c7d8;
-  cursor: pointer;
-}
-
-.SidebarLink:hover {
-  color: #fff;
-  transition: 0.2s ease-in-out;
-}
-
-/* LinkR */
-.SidebarLinkR {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  text-decoration: none;
-  list-style: none;
-  transition: 0.2s ease-in-out;
-  color: #c5c7d8;
-  cursor: pointer;
-}
-
-.SidebarLinkR:hover {
-  text-shadow: -1px -1px 6px #dc0000, 1px -1px 6px #dc0000, -1px 1px 6px #dc0000,
-    1px 1px 6px #dc0000;
-  border-radius: 50px;
-  transition: 0.2s ease-in-out;
-}
-
-.SideBtnWrap {
-  display: flex;
-  justify-content: center;
-}
-
-.SidebarRoute {
-  border-radius: 50px;
-  background: #7e42ff;
-  white-space: nowrap;
-  padding: 16px 64px;
-  color: #010606;
-  font-size: 16px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-.SidebarRoute:hover {
-  transition: all 0.2s ease-in-out;
-  background: #fff;
-  color: #010606;
-}
-
 .SidebarMenu {
   display: grid;
+  justify-content: center;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 80px);
   text-align: center;
