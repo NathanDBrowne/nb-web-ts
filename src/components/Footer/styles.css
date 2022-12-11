@@ -1,8 +1,8 @@
-.FooterContainer {
+.Container {
   background: #010606;
 }
 
-.FooterWrap {
+.Wrap {
   padding: 48px 24px;
   display: flex;
   flex-direction: column;
@@ -12,20 +12,20 @@
   margin: 0 auto;
 }
 
-.FooterLinksWrapper {
+.LinksWrapper {
   display: flex;
 }
 
-.FooterLinksContainer {
+.LinksContainer {
   display: flex;
   justify-content: center;
 }
 
 @media screen and (max-width: 820px) {
-  .FooterLinksWrapper {
+  .LinksWrapper {
     flex-direction: column;
   }
-  .FooterLinksContainer {
+  .LinksContainer {
     padding-top: 32px;
   }
   .SocialMediaWrap {
@@ -33,61 +33,29 @@
   }
 }
 
-.FooterLinkItems {
+.LinkItems {
   display: flex;
   flex-direction: column;
-  align-items: flex;
   margin: 16px;
-  text-align: center;
+  text-align: left;
   width: 200px;
   box-sizing: border-box;
   color: #fff;
 }
 @media screen and (max-width: 420px) {
-  .FooterLinkItems {
+  .LinkItems {
     padding: 20px;
     margin: 0;
     width: 100%;
   }
 }
-.FooterLinkTitle {
+.LinkTitle {
   margin-bottom: 16px;
   font-size: 24px;
   text-align: left;
 }
 
-.FooterScrollLink {
-  color: #fff;
-  text-decoration: none;
-  text-align: left;
-  margin-bottom: 0.5rem;
-  font-size: 14px;
-}
-.FooterScrollLink:hover {
-  color: #fff;
-  text-shadow: -1px -1px 3px #473bf0, 1px -1px 3px #473bf0, -1px 1px 3px #473bf0,
-    1px 1px 3px #473bf0;
-  cursor: pointer;
-  transition: 0.3s ease-out;
-}
-
-.FooterLink {
-  color: #fff;
-  text-decoration: none;
-  text-align: left;
-  margin-bottom: 0.5rem;
-  font-size: 14px;
-}
-.FooterLink:hover {
-  color: #fff;
-  text-shadow: -1px -1px 3px #473bf0, 1px -1px 3px #473bf0, -1px 1px 3px #473bf0,
-    1px 1px 3px #473bf0;
-  cursor: pointer;
-  transition: 0.3s ease-out;
-}
-
 .SocialMedia {
-  /* max-width: 1000px; */
   align-items: center;
   justify-self: start;
   width: 100%;

@@ -3,96 +3,73 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TelegramIcon from "@mui/icons-material/Telegram";
 
-import { Link as LinkS } from "react-scroll";
+import { ScrollLink, HyperLink } from "../Button";
 
 function Footer() {
   return (
-    <div className="FooterContainer" id={"contact"}>
-      <div className="FooterWrap">
-        <div className="FooterLinksContainer">
-          <div className="FooterLinksWrapper">
-            <div className="FooterLinkItems">
-              <h1 className="FooterLinkTitle">Reach Out</h1>
-              <p className="FooterScrollLink">+44(0)7312 267 345</p>
-              <p className="FooterScrollLink">nathandbrowne@gmail.com</p>
+    <div className="Container" id={"contact"}>
+      <div className="Wrap">
+        <div className="LinksContainer">
+          <div className="LinksWrapper">
+            <div className="LinkItems">
+              <h1 className="LinkTitle">Reach Out</h1>
+              <a className="FooterLink">+44(0)7312 267 345</a>
+              <a className="FooterLink">nathandbrowne@gmail.com</a>
             </div>
-            <div className="FooterLinkItems">
-              <h1 className="FooterLinkTitle">About Me</h1>
-              <LinkS className="FooterScrollLink" to="projects">
-                Projects
-              </LinkS>
-              <LinkS className="FooterScrollLink" to="stack">
-                My Stack
-              </LinkS>
-              <a
-                className="FooterScrollLink"
-                href="https://github.com/NathanDBrowne"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
+            <div className="LinkItems">
+              <h1 className="LinkTitle">About Me</h1>
+              <ScrollLink
+                text="Projects"
+                className="FooterLink"
+                to="projects"
+              />
+              <ScrollLink text="Stack" className="FooterLink" to="stack" />
+              <HyperLink
+                className="FooterLink"
+                to="https://github.com/NathanDBrowne"
+                text="GitHub"
+              />
             </div>
-            <div className="FooterLinkItems">
-              <h1 className="FooterLinkTitle">Social Media</h1>
-              <a
+            <div className="LinkItems">
+              <h1 className="LinkTitle">Social Media</h1>
+              <HyperLink
                 className="FooterLink"
-                href="https://www.linkedin.com/in/nathan-b-42549413a/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-              <a
+                to="https://www.linkedin.com/in/nathan-b-42549413a/"
+                text="LinkedIn"
+              />
+              <HyperLink
                 className="FooterLink"
-                href="https://t.me/FreeweightNate"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Telegram
-              </a>
+                to="https://t.me/FreeweightNate"
+                text="Telegram"
+              />
             </div>
           </div>
         </div>
       </div>
       <div className="SocialMedia">
         <div className="SocialMediaWrap">
-          <LinkS
+          <ScrollLink
             className="SocialLogo"
             to="hero"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-80}
-          >
-            Nate Browne 2023
-          </LinkS>
+            text="Nate Browne 2023"
+          />
           <p className="WebsiteRights">Site made with React.js</p>
           <div className="SocialIcons">
-            <a
+            <HyperLink
               className="SocialIconLink"
-              href="https://github.com/NathanDBrowne"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitHubIcon />
-            </a>
-            <a
+              to="https://github.com/NathanDBrowne"
+              text={<GitHubIcon />}
+            />
+            <HyperLink
               className="SocialIconLink"
-              href="https://www.linkedin.com/in/nathan-b-42549413a/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkedInIcon />
-            </a>
-            <a
+              to="https://www.linkedin.com/in/nathan-b-42549413a/"
+              text={<LinkedInIcon />}
+            />
+            <HyperLink
               className="SocialIconLink"
-              href="https://t.me/FreeweightNate"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TelegramIcon />
-            </a>
+              to="https://t.me/FreeweightNate"
+              text={<TelegramIcon />}
+            />
           </div>
         </div>
       </div>

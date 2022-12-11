@@ -3,11 +3,20 @@ import Header from "../../components/Header";
 import HeroSection from "../../components/HeroSection";
 import Projects from "./Projects";
 import Stack from "./Stack";
+import SideBar from "../../components/SideBar";
+
+import { useState } from "react";
 
 const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div>
-      <Header />
+      <Header toggle={toggle} />
+      <SideBar isOpen={isOpen} toggle={toggle} />
       <HeroSection />
       <Projects id="projects" />
       <Stack />

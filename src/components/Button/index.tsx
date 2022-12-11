@@ -5,9 +5,11 @@ import { useState } from "react";
 import "./styles.css";
 
 type ButtonProps = {
-  text: string;
+  text: any;
   to: string;
   style?: any;
+  className?: any;
+  onClick?: any;
 };
 
 export const HeroButton = ({ text, to }: ButtonProps) => {
@@ -35,34 +37,46 @@ export const HeroButton = ({ text, to }: ButtonProps) => {
   );
 };
 
-export const ScrollButton = ({ text, to }: ButtonProps) => {
+export const ScrollLink = ({
+  text,
+  to,
+  style,
+  className,
+  onClick,
+}: ButtonProps) => {
   return (
-    <LinkS to={to} smooth={true} duration={500} spy={true} offset={-80}>
-      <p className="ScrollButton">{text}</p>
+    <LinkS
+      className={className}
+      style={style}
+      to={to}
+      smooth={true}
+      duration={500}
+      spy={true}
+      offset={-80}
+      onClick={onClick}
+    >
+      {text}
     </LinkS>
   );
 };
 
-export const ScrollLogo = ({ text, to }: ButtonProps) => {
+export const HyperLink = ({
+  text,
+  to,
+  style,
+  className,
+  onClick,
+}: ButtonProps) => {
   return (
-    <LinkS to={to} smooth={true} duration={500} spy={true} offset={-80}>
-      <p className="Logo">{text}</p>
-    </LinkS>
-  );
-};
-
-export const ProjectButton = ({ text, to, style }: ButtonProps) => {
-  return (
-    <div>
-      <a
-        className="ProjectButton"
-        href={to}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={style}
-      >
-        {text}
-      </a>
-    </div>
+    <a
+      className={className}
+      href={to}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={style}
+      onClick={onClick}
+    >
+      {text}
+    </a>
   );
 };

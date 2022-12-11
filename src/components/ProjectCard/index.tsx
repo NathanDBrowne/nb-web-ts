@@ -1,4 +1,4 @@
-import { ProjectButton } from "../Button";
+import { HyperLink } from "../Button";
 import "./styles.css";
 
 type CardProps = {
@@ -34,9 +34,10 @@ const ProjectCard = ({
                 <p className="TopLine">{topline}</p>
                 <h1 className={darkMode ? "LightH1" : "DarkH1"}>{headline}</h1>
                 <p className="Subtitle">{description}</p>
-                <ProjectButton
+                <HyperLink
                   text={buttonLabel}
                   to={buttonAddr}
+                  className="WideButton"
                   style={
                     imgStart
                       ? { background: "#101010" }

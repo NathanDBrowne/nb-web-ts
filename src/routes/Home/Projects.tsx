@@ -11,6 +11,8 @@ import SQL from "../../media/images/sql.svg";
 import Tech from "../../media/images/tech.svg";
 import VSCode from "../../media/images/vscode.svg";
 
+import "../../components/ProjectCard/styles.css";
+
 type ProjectProps = {
   id?: string;
 };

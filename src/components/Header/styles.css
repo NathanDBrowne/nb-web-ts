@@ -1,14 +1,79 @@
-.App-link {
-  color: #c5c7d8;
-  font-size: 20px;
-  text-decoration: none;
-  font-weight: 400;
-}
-.App-link:hover {
-  font-weight: 600;
-  cursor: pointer;
-}
-.Toolbar {
-  color: transparent;
+.Nav {
   height: 80px;
+  margin-top: -80px;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  width: 100%;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.NavbarContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.NavMenu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  margin-right: 30px;
+  justify-content: "space-evenly";
+}
+
+.NavItem {
+  height: 80px;
+}
+
+.NavBtn {
+  display: flex;
+  align-items: center;
+}
+
+.NavBtnLink {
+  border-radius: 50px;
+  background: #7e42ff;
+  white-space: nowrap;
+  padding: 10px 22px;
+  color: #010606;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  box-shadow: 0 0 10px #000;
+}
+.NavBtnLink:hover {
+  transition: all 0.2s ease-in-out;
+  background: #38de21;
+  color: #010606;
+}
+
+.MobileIcon {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .MobileIcon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #eee;
+  }
+  .NavBtn {
+    display: none;
+  }
+  .NavMenu {
+    display: none;
+  }
 }

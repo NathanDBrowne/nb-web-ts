@@ -1,31 +1,11 @@
 import { useState, useEffect } from "react";
-import Toolbar from "@mui/material/Toolbar";
 import "./styles.css";
 import { IconContext } from "react-icons/lib";
+import { FaBars } from "react-icons/fa";
 
-import styled from "styled-components";
+import { ScrollLink } from "../Button";
 
-import { ScrollButton, ScrollLogo } from "../Button";
-
-type NavProp = { scrollNav: boolean };
-
-export const Nav = styled.nav`
-  background: ${({ scrollNav }: NavProp) =>
-    scrollNav ? "#101010" : "transparent"};
-  height: 80px;
-  margin-top: -80px;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  font-size: 1rem;
-  position: sticky;
-  top: 0;
-  @media screen and (max-width: 2010606px) {
-    transition: 0.8s all ease;
-  }
-`;
-
-export default function Header() {
+export default function Header({ toggle }: { toggle: any }) {
   const [scrollNav, setScrollNav] = useState(false);
 
   const changeNav = () => {
@@ -41,30 +21,47 @@ export default function Header() {
   }, []);
 
   return (
-    <IconContext.Provider value={{ color: "#101010" }}>
-      <Nav scrollNav={scrollNav}>
-        <Toolbar
-          className="Toolbar"
-          style={{
-            justifyContent: "space-evenly",
-            color: "transparent",
-          }}
-        >
-          <ScrollLogo to="hero" text="Nate Browne" />
-          <div className="App-link">
-            <ScrollButton text="Home" to="hero" />
+    <IconContext.Provider value={{ color: "#c5c7d8" }}>
+      <nav
+        className="Nav"
+        style={
+          scrollNav ? { background: "#101010" } : { background: "transparent" }
+        }
+      >
+        <div className="NavbarContainer">
+          <ScrollLink
+            to="hero"
+            text="Nate Browne"
+            className="Logo"
+            style={{ fontWeight: 500 }}
+          />
+          <div className="MobileIcon" onClick={toggle}>
+            <FaBars />
           </div>
-          <div className="App-link">
-            <ScrollButton text="Projects" to="projects" />
-          </div>
-          <div className="App-link">
-            <ScrollButton text="Stack" to="stack" />
-          </div>
-          <div className="App-link">
-            <ScrollButton text="Contact" to="contact" />
-          </div>
-        </Toolbar>
-      </Nav>
+          <ul className="NavMenu">
+            <li className="NavItem">
+              <ScrollLink
+                className="GeneralLink"
+                to="hero"
+                text="Nate Browne"
+              />
+            </li>
+            <li className="NavItem">
+              <ScrollLink
+                className="GeneralLink"
+                text="Projects"
+                to="projects"
+              />
+            </li>
+            <li className="NavItem">
+              <ScrollLink className="GeneralLink" text="Stack" to="stack" />
+            </li>
+            <li className="NavItem">
+              <ScrollLink className="GeneralLink" text="Contact" to="contact" />
+            </li>
+          </ul>
+        </div>
+      </nav>
     </IconContext.Provider>
   );
 }

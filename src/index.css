@@ -13,3 +13,9 @@ code {
     monospace; */
   font-family: "Raleway", sans-serif;
 }
+
+div {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0%;
+}
