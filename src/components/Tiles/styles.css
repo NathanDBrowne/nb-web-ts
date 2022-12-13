@@ -19,7 +19,7 @@
 }
 @media screen and (max-width: 1000px) {
   .TileContainer {
-    height: 2000px;
+    height: 1950px;
   }
   .TileWrapper {
     grid-template-columns: 1fr 1fr;
@@ -27,7 +27,7 @@
 }
 @media screen and (max-width: 700px) {
   .TileContainer {
-    height: 3400px;
+    height: 3350px;
   }
   .TileWrapper {
     grid-template-columns: 1fr;
@@ -57,7 +57,7 @@
 
 /* img */
 .TileImg {
-  height: 160px;
+  height: 100px;
   width: 160px;
   margin-bottom: 10px;
 }

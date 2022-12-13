@@ -19,7 +19,9 @@ const App = () => {
       <SideBar isOpen={isOpen} toggle={toggle} />
       <HeroSection
         title="Hi. I'm Nate."
-        text="I'm a UK-based developer. This site is built to showcase my work but also acts as a nice repo for useful tools (in the codec)"
+        text={
+          "I'm a UK-based developer. This site is built to showcase my work."
+        }
         scrolls={true}
         buttonText="See my work"
         buttonTo="projects"
