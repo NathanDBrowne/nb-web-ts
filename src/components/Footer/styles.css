@@ -40,7 +40,7 @@
   text-align: left;
   width: 200px;
   box-sizing: border-box;
-  color: #fff;
+  color: #eee;
 }
 @media screen and (max-width: 420px) {
   .LinkItems {
@@ -71,7 +71,7 @@
 }
 
 .SocialLogo {
-  color: #fff;
+  color: #eee;
   justify-self: start;
   cursor: pointer;
   text-decoration: none;
@@ -80,9 +80,17 @@
   align-items: center;
   margin-bottom: 16px;
   font-weight: bold;
+  transition: all 0.3s ease-in-out;
 }
+.SocialLogo:hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-shadow: -1px -1px 3px #7e42ff, 1px -1px 3px #7e42ff, -1px 1px 3px #7e42ff,
+    1px 1px 3px #7e42ff;
+}
+
 .WebsiteRights {
-  color: #fff;
+  color: #eee;
   margin-bottom: 16px;
 }
 .SocialIcons {
@@ -93,12 +101,12 @@
 }
 
 .SocialIconLink {
-  color: #c5c7d8;
+  color: #eee;
   font-size: 24px;
   transition: all 0.3s ease-in-out;
 }
 .SocialIconLink:hover {
-  color: #fff;
+  color: #7e42ff;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }

@@ -1,5 +1,3 @@
-import React from "react";
-
 import Cloud from "../../media/images/cloud.svg";
 import Git from "../../media/images/git.svg";
 import JavaScript from "../../media/images/javascript.svg";
@@ -12,7 +10,7 @@ import VSCode from "../../media/images/vscode.svg";
 
 import "../../components/Tiles/styles.css";
 
-import Tile from "../../components/Tiles/Tile";
+import Tile from "../../components/Tiles";
 
 const data = [
   {

@@ -43,7 +43,7 @@
 
 /* applies to h1 */
 .HeroH1 {
-  color: #c5c7d8;
+  color: #eee;
   font-size: 48px;
   text-align: center;
   text-shadow: 0 0 10px #101010;
@@ -51,7 +51,7 @@
 /* applies to p */
 .HeroP {
   margin-top: 24px;
-  color: #c5c7d8;
+  color: #eee;
   font-size: 34px;
   text-align: center;
   max-width: 600px;

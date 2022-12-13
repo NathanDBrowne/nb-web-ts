@@ -2,12 +2,12 @@
 .ProjectContainerLight {
   color: #101010;
   align-items: center;
-  background-color: #fff;
+  background-color: #eee;
 }
 
 /*div*/
 .ProjectContainerDark {
-  color: #fff;
+  color: #eee;
   align-items: center;
   background-color: #101010;
 }
@@ -109,7 +109,7 @@
   font-size: 48px;
   line-height: 1.1;
   font-weight: 500;
-  color: #f7f8fa;
+  color: #eee;
 }
 
 @media screen and (max-width: 480px) {

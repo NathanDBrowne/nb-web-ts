@@ -4,7 +4,7 @@
   z-index: 999;
   width: 100%;
   height: 100%;
-  background: #0d0d0d;
+  background: #101010;
   display: grid;
   align-items: center;
   top: 0;
@@ -13,7 +13,7 @@
 }
 
 .FaTimes {
-  color: #c5c7d8;
+  color: #eee;
 }
 
 /* div */

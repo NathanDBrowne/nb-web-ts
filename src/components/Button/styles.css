@@ -3,7 +3,7 @@
   background: #010606;
   white-space: nowrap;
   padding: 14px 48px;
-  color: #c5c7d8;
+  color: #eee;
   font-size: 20px;
   outline: none;
   border: none;
@@ -16,8 +16,8 @@
 }
 .HeroButton:hover {
   transition: all 0.2s ease-in-out;
-  box-shadow: -1px -1px 3px #473bf0, 1px -1px 3px #473bf0, -1px 1px 3px #473bf0,
-    1px 1px 3px #473bf0;
+  box-shadow: -1px -1px 3px #7e42ff, 1px -1px 3px #7e42ff, -1px 1px 3px #7e42ff,
+    1px 1px 3px #7e42ff;
   color: #fff;
   font-weight: 600;
 }
@@ -35,7 +35,7 @@
 }
 
 .GeneralLink {
-  color: #c5c7d8;
+  color: #eee;
   display: flex;
   align-items: center;
   text-align: center;
@@ -51,13 +51,13 @@
 .GeneralLink:hover {
   color: #fff;
   transition: all 0.2s ease-in-out;
-  text-shadow: -1px -1px 6px #473bf0, 1px -1px 6px #473bf0, -1px 1px 6px #473bf0,
-    1px 1px 6px #473bf0;
+  text-shadow: -1px -1px 6px #7e42ff, 1px -1px 6px #7e42ff, -1px 1px 6px #7e42ff,
+    1px 1px 6px #7e42ff;
   border-radius: 50px;
 }
 
 .FooterLink {
-  color: #fff;
+  color: #eee;
   text-decoration: none;
   text-align: left;
   margin-bottom: 0.5rem;
@@ -66,8 +66,8 @@
 }
 .FooterLink:hover {
   color: #fff;
-  text-shadow: -1px -1px 3px #473bf0, 1px -1px 3px #473bf0, -1px 1px 3px #473bf0,
-    1px 1px 3px #473bf0;
+  text-shadow: -1px -1px 3px #7e42ff, 1px -1px 3px #7e42ff, -1px 1px 3px #7e42ff,
+    1px 1px 3px #7e42ff;
   cursor: pointer;
   transition: 0.3s ease-out;
 }
@@ -77,7 +77,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  color: #c5c7d8;
+  color: #eee;
   text-decoration: none;
   text-shadow: -1px -1px 3px black, 1px -1px 3px black, -1px 1px 3px black,
     1px 1px 3px black;
@@ -87,8 +87,8 @@
   cursor: pointer;
   color: #fff;
   transition: all 0.5s ease-in-out;
-  text-shadow: -1px -1px 3px #473bf0, 1px -1px 3px #473bf0, -1px 1px 3px #473bf0,
-    1px 1px 3px #473bf0;
+  text-shadow: -1px -1px 3px #7e42ff, 1px -1px 3px #7e42ff, -1px 1px 3px #7e42ff,
+    1px 1px 3px #7e42ff;
 }
 
 .WideButton {
@@ -99,7 +99,7 @@
   border: none;
   cursor: pointer;
   display: flex;
-  color: #c5c7d8;
+  color: #eee;
   justify-content: center;
   text-decoration: none;
   align-items: center;
@@ -112,8 +112,8 @@
 .WideButton:hover {
   transition: all 0.2s ease-in-out;
   border-style: hidden;
-  color: #c5c7d8;
+  color: #eee;
   font-weight: 600;
-  box-shadow: -1px -1px 3px #473bf0, 1px -1px 3px #473bf0, -1px 1px 3px #473bf0,
-    1px 1px 3px #473bf0;
+  box-shadow: -1px -1px 3px #7e42ff, 1px -1px 3px #7e42ff, -1px 1px 3px #7e42ff,
+    1px 1px 3px #7e42ff;
 }
