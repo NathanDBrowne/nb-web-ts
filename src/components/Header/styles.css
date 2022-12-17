@@ -73,10 +73,10 @@
     font-size: 1.8rem;
     cursor: pointer;
   }
-  .NavBtn {
+  .HeaderBtn {
     display: none;
   }
-  .NavMenu {
+  .HeaderMenu {
     display: none;
   }
 }

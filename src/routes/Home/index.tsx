@@ -39,7 +39,7 @@ const App = () => {
       <HeroSection
         title="Hi. I'm Nate."
         text={
-          "I'm a UK-based developer. This site is built to showcase my work."
+          "I'm a developer based in the UK. This site is built to showcase my work."
         }
         scrolls={true}
         buttonText="See my work"
