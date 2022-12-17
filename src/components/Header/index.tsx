@@ -3,9 +3,22 @@ import "./styles.css";
 import { IconContext } from "react-icons/lib";
 import { FaBars } from "react-icons/fa";
 
-import { ScrollLink } from "../Button";
+import { ScrollLink, HyperLink } from "../Button";
 
-export default function Header({ toggle }: { toggle: any }) {
+type HeaderLinkProps = {
+  text: string;
+  className: string;
+  to: string;
+  isScroll: boolean;
+};
+
+export default function Header({
+  toggle,
+  content,
+}: {
+  toggle: any;
+  content: any;
+}) {
   const [scrollNav, setScrollNav] = useState(false);
 
   const changeNav = () => {
@@ -14,6 +27,27 @@ export default function Header({ toggle }: { toggle: any }) {
     } else {
       setScrollNav(false);
     }
+  };
+
+  // we define the sidebar item here so we can access the toggle variable in the sidebar scope
+  const HeaderItem = ({ text, className, to, isScroll }: HeaderLinkProps) => {
+    let ButtonClass;
+
+    switch (isScroll) {
+      case true:
+        ButtonClass = ScrollLink;
+        break;
+
+      default:
+        ButtonClass = HyperLink;
+        break;
+    }
+
+    return (
+      <li className="NavItem" key={"headerItem_" + text}>
+        <ButtonClass text={text} className={className} to={to} />
+      </li>
+    );
   };
 
   useEffect(() => {
@@ -39,22 +73,8 @@ export default function Header({ toggle }: { toggle: any }) {
             <FaBars />
           </div>
           <ul className="NavMenu">
-            <li className="NavItem">
-              <ScrollLink className="GeneralLink" to="hero" text="Home" />
-            </li>
-            <li className="NavItem">
-              <ScrollLink
-                className="GeneralLink"
-                text="Projects"
-                to="projects"
-              />
-            </li>
-            <li className="NavItem">
-              <ScrollLink className="GeneralLink" text="Stack" to="stack" />
-            </li>
-            <li className="NavItem">
-              <ScrollLink className="GeneralLink" text="Contact" to="contact" />
-            </li>
+            {/* map an unknown number of sidebar items here */}
+            {content.map((contentItem: any) => HeaderItem(contentItem))}
           </ul>
         </div>
       </nav>

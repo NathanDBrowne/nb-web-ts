@@ -13,10 +13,29 @@ const App = () => {
     setIsOpen(!isOpen);
   };
 
+  // if we define this once here and keep the sidebar and navbar general,
+  // they will automatically update together
+  let navContent = [
+    { text: "About", className: "GeneralLink", to: "hero", isScroll: true },
+    {
+      text: "Projects",
+      className: "GeneralLink",
+      to: "projects",
+      isScroll: true,
+    },
+    { text: "My Stack", className: "GeneralLink", to: "stack", isScroll: true },
+    {
+      text: "Contact",
+      className: "GeneralLink",
+      to: "contact",
+      isScroll: true,
+    },
+  ];
+
   return (
     <div>
-      <Header toggle={toggle} />
-      <SideBar isOpen={isOpen} toggle={toggle} />
+      <Header toggle={toggle} content={navContent} />
+      <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
       <HeroSection
         title="Hi. I'm Nate."
         text={

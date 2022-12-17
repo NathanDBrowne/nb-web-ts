@@ -1,8 +1,46 @@
 import { FaTimes } from "react-icons/fa";
-import { ScrollLink } from "../Button";
+import { ScrollLink, HyperLink } from "../Button";
 import "./styles.css";
 
-const SideBar = ({ isOpen, toggle }: { isOpen: boolean; toggle: any }) => {
+type SidebarItemProps = {
+  text: string;
+  className: string;
+  to: string;
+  isScroll: boolean;
+};
+
+type SideBarProps = {
+  isOpen: boolean;
+  toggle: any;
+  content: any;
+};
+
+const SideBar = ({ isOpen, toggle, content }: SideBarProps) => {
+  // we define the sidebar item here so we can access the toggle variable in the sidebar scope
+  const SideBarItem = ({ text, className, to, isScroll }: SidebarItemProps) => {
+    let ButtonClass;
+
+    switch (isScroll) {
+      case true:
+        ButtonClass = ScrollLink;
+        break;
+
+      default:
+        ButtonClass = HyperLink;
+        break;
+    }
+
+    return (
+      <ButtonClass
+        key={"sidebarItem_" + text}
+        text={text}
+        className={className}
+        to={to}
+        onClick={toggle}
+      />
+    );
+  };
+
   return (
     <aside
       className="SidebarContainer"
@@ -15,30 +53,8 @@ const SideBar = ({ isOpen, toggle }: { isOpen: boolean; toggle: any }) => {
         <FaTimes className="FaTimes" />
       </div>
       <ul className="SidebarMenu">
-        <ScrollLink
-          text="About"
-          className="GeneralLink"
-          to="hero"
-          onClick={toggle}
-        />
-        <ScrollLink
-          text="Projects"
-          className="GeneralLink"
-          to="projects"
-          onClick={toggle}
-        />
-        <ScrollLink
-          text="My Stack"
-          className="GeneralLink"
-          to="stack"
-          onClick={toggle}
-        />
-        <ScrollLink
-          text="Contact"
-          className="GeneralLink"
-          to="contact"
-          onClick={toggle}
-        />
+        {/* map an unknown number of sidebar items here */}
+        {content.map((contentItem: any) => SideBarItem(contentItem))}
       </ul>
     </aside>
   );
