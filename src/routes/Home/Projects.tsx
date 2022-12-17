@@ -61,6 +61,7 @@ const Projects = ({ id = "null" }: ProjectProps) => {
   let items = data.map((entry) => {
     return (
       <ProjectCard
+        key={"Project_" + entry.headline}
         topline={entry.topline}
         headline={entry.headline}
         description={entry.description}

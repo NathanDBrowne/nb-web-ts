@@ -73,6 +73,7 @@ const Stack = () => {
   let items = data.map((entry) => {
     return (
       <Tile
+        key={"Project_" + entry.title}
         icon={entry.icon}
         title={entry.title}
         description={entry.description}
