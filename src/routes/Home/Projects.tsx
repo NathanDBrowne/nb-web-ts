@@ -28,7 +28,7 @@ const data = [
     description:
       "So far, I've found React to be the most intuitive of the web frameworks I've looked at. This site is nothing particularly fancy but it was certainly an explorative intro to front-end dev.",
     buttonLabel: "Github Repo",
-    buttonAddr: "https://github.com/NathanDBrowne/nb-web",
+    buttonAddr: "https://github.com/NathanDBrowne/nb-web-ts",
     imgSrc: JavaScript,
     darkMode: false,
     imgStart: false,
