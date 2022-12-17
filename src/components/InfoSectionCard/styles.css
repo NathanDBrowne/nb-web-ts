@@ -1,30 +1,30 @@
 /*div*/
-.ProjectContainerLight {
+.InfoSectionContainerLight {
   color: #101010;
   align-items: center;
   background-color: #eee;
 }
 
 /*div*/
-.ProjectContainerDark {
+.InfoSectionContainerDark {
   color: #eee;
   align-items: center;
   background-color: #101010;
 }
 
 @media screen and (max-width: 810px) {
-  .ProjectContainerDark {
+  .InfoSectionContainerDark {
     padding-top: 10px;
     padding-bottom: 350px;
   }
-  .ProjectContainerLight {
+  .InfoSectionContainerLight {
     padding-top: 10px;
     padding-bottom: 350px;
   }
 }
 
 /* div */
-.ProjectRowImgStart {
+.InfoSectionRowImgStart {
   display: grid;
   grid-auto-columns: minmax(auto, 0.8fr);
   padding: 20px;
@@ -33,7 +33,7 @@
 }
 
 /* div */
-.ProjectRow {
+.InfoSectionRow {
   display: grid;
   text-align: right;
   grid-auto-columns: minmax(auto, 0.8fr);
@@ -60,10 +60,10 @@
 }
 
 @media screen and (max-width: 810px) {
-  .ProjectRowImgStart {
+  .InfoSectionRowImgStart {
     grid-template-areas: "txt" "img";
   }
-  .ProjectRow {
+  .InfoSectionRow {
     grid-template-areas: "txt txt" "img img";
   }
   .ImgWrap {
@@ -73,7 +73,7 @@
 }
 
 /* div */
-.ProjectWrapper {
+.InfoSectionWrapper {
   display: grid;
   z-index: 1;
   height: 700px;

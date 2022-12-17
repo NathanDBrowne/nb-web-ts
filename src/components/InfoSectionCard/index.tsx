@@ -12,7 +12,7 @@ type CardProps = {
   imgStart: boolean;
 };
 
-const ProjectCard = ({
+const InfoSectionCard = ({
   topline,
   headline,
   description,
@@ -25,10 +25,14 @@ const ProjectCard = ({
   return (
     <>
       <div
-        className={darkMode ? "ProjectContainerDark" : "ProjectContainerLight"}
+        className={
+          darkMode ? "InfoSectionContainerDark" : "InfoSectionContainerLight"
+        }
       >
-        <div className="ProjectWrapper">
-          <div className={imgStart ? "ProjectRowImgStart" : "ProjectRow"}>
+        <div className="InfoSectionWrapper">
+          <div
+            className={imgStart ? "InfoSectionRowImgStart" : "InfoSectionRow"}
+          >
             <div className="Column1">
               <div className="TextWrapper">
                 <p className="TopLine">{topline}</p>
@@ -61,4 +65,4 @@ const ProjectCard = ({
   );
 };
 
-export default ProjectCard;
+export default InfoSectionCard;

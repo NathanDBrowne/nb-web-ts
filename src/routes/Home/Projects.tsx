@@ -1,10 +1,10 @@
-import ProjectCard from "../../components/ProjectCard";
+import InfoSectionCard from "../../components/InfoSectionCard";
 import AI from "../../media/images/ai.svg";
 import JavaScript from "../../media/images/javascript.svg";
 import Python from "../../media/images/python.svg";
 import Tech from "../../media/images/tech.svg";
 
-import "../../components/ProjectCard/styles.css";
+import "../../components/InfoSectionCard/styles.css";
 
 type ProjectProps = {
   id?: string;
@@ -60,7 +60,7 @@ const data = [
 const Projects = ({ id = "null" }: ProjectProps) => {
   let items = data.map((entry) => {
     return (
-      <ProjectCard
+      <InfoSectionCard
         key={"Project_" + entry.headline}
         topline={entry.topline}
         headline={entry.headline}

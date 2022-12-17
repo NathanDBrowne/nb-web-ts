@@ -1,4 +1,4 @@
-.Nav {
+.Header {
   height: 80px;
   margin-top: -80px;
   justify-content: center;
@@ -11,7 +11,7 @@
   transition: all 0.6s ease-in-out;
 }
 
-.NavbarContainer {
+.HeaderContainer {
   display: flex;
   justify-content: space-between;
   height: 80px;
@@ -19,7 +19,7 @@
   padding: 0 24px;
 }
 
-.NavMenu {
+.HeaderMenu {
   display: flex;
   align-items: center;
   list-style: none;
@@ -28,16 +28,16 @@
   justify-content: "space-evenly";
 }
 
-.NavItem {
+.HeaderItem {
   height: 80px;
 }
 
-.NavBtn {
+.HeaderBtn {
   display: flex;
   align-items: center;
 }
 
-.NavBtnLink {
+.HeaderBtnLink {
   border-radius: 50px;
   background: #7e42ff;
   white-space: nowrap;
@@ -51,7 +51,7 @@
   text-decoration: none;
   box-shadow: 0 0 10px #000;
 }
-.NavBtnLink:hover {
+.HeaderBtnLink:hover {
   transition: all 0.2s ease-in-out;
   background: #38de21;
   color: #010606;

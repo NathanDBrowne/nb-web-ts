@@ -19,13 +19,13 @@ export default function Header({
   toggle: any;
   content: any;
 }) {
-  const [scrollNav, setScrollNav] = useState(false);
+  const [scrollHeader, setScrollHeader] = useState(false);
 
   const changeNav = () => {
     if (window.scrollY >= 80) {
-      setScrollNav(true);
+      setScrollHeader(true);
     } else {
-      setScrollNav(false);
+      setScrollHeader(false);
     }
   };
 
@@ -44,7 +44,7 @@ export default function Header({
     }
 
     return (
-      <li className="NavItem" key={"headerItem_" + text}>
+      <li className="HeaderItem" key={"headerItem_" + text}>
         <ButtonClass text={text} className={className} to={to} />
       </li>
     );
@@ -57,12 +57,14 @@ export default function Header({
   return (
     <IconContext.Provider value={{ color: "#c5c7d8" }}>
       <nav
-        className="Nav"
+        className="Header"
         style={
-          scrollNav ? { background: "#101010" } : { background: "transparent" }
+          scrollHeader
+            ? { background: "#101010" }
+            : { background: "transparent" }
         }
       >
-        <div className="NavbarContainer">
+        <div className="HeaderContainer">
           <ScrollLink
             to="hero"
             text="Nate Browne"
@@ -72,7 +74,7 @@ export default function Header({
           <div className="MobileIcon" onClick={toggle}>
             <FaBars />
           </div>
-          <ul className="NavMenu">
+          <ul className="HeaderMenu">
             {/* map an unknown number of sidebar items here */}
             {content.map((contentItem: any) => HeaderItem(contentItem))}
           </ul>
