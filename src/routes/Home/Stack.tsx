@@ -23,7 +23,7 @@ const data = [
     icon: JavaScript,
     title: "React.js",
     description:
-      "React is my favourite web framework so far - I think the way it wraps HTML and CSS is very intuitive.",
+      "React is my favourite web framework - I made this site using TypeScript and React.",
   },
   {
     icon: Cloud,
