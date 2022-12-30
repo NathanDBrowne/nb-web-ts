@@ -5,6 +5,8 @@ import Projects from "./Projects";
 import Stack from "./Stack";
 import SideBar from "../../components/SideBar";
 
+import HeroVideo from "../../media/videos/stars.mp4";
+
 import { useState, useEffect } from "react";
 
 const App = () => {
@@ -52,6 +54,7 @@ const App = () => {
       <Header logoText="Nate Browne" toggle={toggle} content={navContent} />
       <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
       <HeroSection
+        background={HeroVideo}
         title="Hi. I'm Nate."
         text={
           "I'm a developer based in the UK. This site is built to showcase my work."

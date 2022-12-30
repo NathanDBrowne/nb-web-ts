@@ -2,6 +2,7 @@ import Menu from "./Menu";
 import Header from "../../components/Header";
 import HeroSection from "../../components/HeroSection";
 import SideBar from "../../components/SideBar";
+import HeroVideo from "../../media/videos/solar_system.mp4";
 
 import { useState, useEffect } from "react";
 
@@ -31,13 +32,15 @@ const App = () => {
       <Header logoText="CODEC" toggle={toggle} content={navContent} />
       <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
       <HeroSection
+        background={HeroVideo}
+        style="CodecBg"
         title="Welcome to CODEC."
         text={"Notes for the future me... who has forgotten stuff."}
         scrolls={true}
         buttonText="Menu"
         buttonTo="menu"
       />
-      <Menu />
+      {/* <Menu /> */}
     </div>
   );
 };

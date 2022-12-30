@@ -1,10 +1,11 @@
 import "./styles.css";
 
 import { HeroButton, HeroButtonRoute } from "../Button";
-
-import Video from "../../media/videos/stars.mp4";
+import DefaultVideo from "../../media/videos/stars.mp4";
 
 type HeroProps = {
+  background?: any;
+  style?: any;
   title: string;
   text: string;
   scrolls: boolean;
@@ -13,6 +14,8 @@ type HeroProps = {
 };
 
 const HeroSection = ({
+  background,
+  style,
   title,
   text,
   scrolls,
@@ -33,7 +36,13 @@ const HeroSection = ({
   return (
     <div className="HeroContainer" id={"hero"}>
       <div className="HeroBg">
-        <video className="VideoBg" autoPlay muted loop src={Video} />
+        <video
+          className={style || "VideoBg"}
+          autoPlay
+          muted
+          loop
+          src={background || DefaultVideo}
+        />
       </div>
       <div className="HeroContent">
         <h1
