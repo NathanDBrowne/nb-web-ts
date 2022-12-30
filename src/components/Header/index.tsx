@@ -3,19 +3,21 @@ import "./styles.css";
 import { IconContext } from "react-icons/lib";
 import { FaBars } from "react-icons/fa";
 
-import { ScrollLink, HyperLink } from "../Button";
+import { ScrollLink, HyperLink, RouteLink } from "../Button";
 
 type HeaderLinkProps = {
   text: string;
   className: string;
   to: string;
-  isScroll: boolean;
+  btnType: string;
 };
 
 export default function Header({
+  logoText,
   toggle,
   content,
 }: {
+  logoText: string;
   toggle: any;
   content: any;
 }) {
@@ -30,16 +32,24 @@ export default function Header({
   };
 
   // we define the sidebar item here so we can access the toggle variable in the sidebar scope
-  const HeaderItem = ({ text, className, to, isScroll }: HeaderLinkProps) => {
+  const HeaderItem = ({ text, className, to, btnType }: HeaderLinkProps) => {
     let ButtonClass;
 
-    switch (isScroll) {
-      case true:
+    switch (btnType) {
+      case "scroll":
         ButtonClass = ScrollLink;
         break;
 
-      default:
+      case "hyperlink":
         ButtonClass = HyperLink;
+        break;
+
+      case "route":
+        ButtonClass = RouteLink;
+        break;
+
+      default:
+        ButtonClass = RouteLink;
         break;
     }
 
@@ -67,7 +77,7 @@ export default function Header({
         <div className="HeaderContainer">
           <ScrollLink
             to="hero"
-            text="Nate Browne"
+            text={logoText}
             className="Logo"
             style={{ fontWeight: 500 }}
           />

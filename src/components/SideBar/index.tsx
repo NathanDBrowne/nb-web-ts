@@ -1,12 +1,12 @@
 import { FaTimes } from "react-icons/fa";
-import { ScrollLink, HyperLink } from "../Button";
+import { ScrollLink, HyperLink, RouteLink } from "../Button";
 import "./styles.css";
 
 type SidebarItemProps = {
   text: string;
   className: string;
   to: string;
-  isScroll: boolean;
+  btnType: string;
 };
 
 type SideBarProps = {
@@ -17,16 +17,24 @@ type SideBarProps = {
 
 const SideBar = ({ isOpen, toggle, content }: SideBarProps) => {
   // we define the sidebar item here so we can access the toggle variable in the sidebar scope
-  const SideBarItem = ({ text, className, to, isScroll }: SidebarItemProps) => {
+  const SideBarItem = ({ text, className, to, btnType }: SidebarItemProps) => {
     let ButtonClass;
 
-    switch (isScroll) {
-      case true:
+    switch (btnType) {
+      case "scroll":
         ButtonClass = ScrollLink;
         break;
 
-      default:
+      case "hyperlink":
         ButtonClass = HyperLink;
+        break;
+
+      case "route":
+        ButtonClass = RouteLink;
+        break;
+
+      default:
+        ButtonClass = RouteLink;
         break;
     }
 
