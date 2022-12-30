@@ -5,7 +5,7 @@ import Projects from "./Projects";
 import Stack from "./Stack";
 import SideBar from "../../components/SideBar";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,25 +16,40 @@ const App = () => {
   // if we define this once here and keep the sidebar and navbar general,
   // they will automatically update together
   let navContent = [
-    { text: "About", className: "GeneralLink", to: "hero", isScroll: true },
+    { text: "About", className: "GeneralLink", to: "hero", btnType: "scroll" },
     {
       text: "Projects",
       className: "GeneralLink",
       to: "projects",
-      isScroll: true,
+      btnType: "scroll",
     },
-    { text: "My Stack", className: "GeneralLink", to: "stack", isScroll: true },
+    {
+      text: "My Stack",
+      className: "GeneralLink",
+      to: "stack",
+      btnType: "scroll",
+    },
     {
       text: "Contact",
       className: "GeneralLink",
       to: "contact",
-      isScroll: true,
+      btnType: "scroll",
+    },
+    {
+      text: "CODEC",
+      className: "GeneralLink",
+      to: "/codec",
+      btnType: "route",
     },
   ];
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <div>
-      <Header toggle={toggle} content={navContent} />
+      <Header logoText="Nate Browne" toggle={toggle} content={navContent} />
       <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
       <HeroSection
         title="Hi. I'm Nate."
