@@ -1,7 +1,8 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import Header from "../../components/Header";
-import SideBar from "../../components/SideBar";
+import Header from "../../../components/Header";
+import SideBar from "../../../components/SideBar";
+import SectionList from "../../../components/SectionList";
 
 import { useState, useEffect } from "react";
 
@@ -12,10 +13,10 @@ const CodecSection = () => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
-  const { section_id } = useParams();
+  const { sectionId } = useParams();
 
   const addr =
-    "https://codec-notion-server.herokuapp.com/stack-item/" + section_id;
+    "https://codec-notion-server.herokuapp.com/stack-item/" + sectionId;
 
   let navContent = [
     {
@@ -46,13 +47,7 @@ const CodecSection = () => {
     <div>
       <Header logoText="CODEC" toggle={toggle} content={navContent} />
       <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
-      {sectionInfo.map((item: any) => (
-        <div style={{ paddingTop: "100px" }}>
-          <Link to={"/codec/articles/" + item.id}>
-            <button>{item.name}</button>
-          </Link>
-        </div>
-      ))}
+      <SectionList sectionInfo={sectionInfo} />
     </div>
   );
 };
