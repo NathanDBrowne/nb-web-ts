@@ -8,6 +8,8 @@ import { useState, useEffect } from "react";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [menuItems, setMenuItems] = useState<any[]>([]);
+
   const toggle = () => {
     setIsOpen(!isOpen);
   };
@@ -24,6 +26,14 @@ const App = () => {
   ];
 
   useEffect(() => {
+    const pullMenu = () => {
+      fetch("https://codec-notion-server.herokuapp.com/menu")
+        .then((response) => response.json())
+        .then((payload) => setMenuItems(payload));
+    };
+
+    pullMenu();
+    console.log(menuItems);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
@@ -40,7 +50,7 @@ const App = () => {
         buttonText="Menu"
         buttonTo="menu"
       />
-      {/* <Menu /> */}
+      <Menu menuItems={menuItems} />
     </div>
   );
 };

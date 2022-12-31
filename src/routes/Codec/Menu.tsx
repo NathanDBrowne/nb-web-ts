@@ -1,42 +1,20 @@
-import Cloud from "../../media/images/cloud.svg";
-
 import "../../components/Tiles/styles.css";
 
 import Tile from "../../components/Tiles";
-import { useEffect, useState } from "react";
+interface menuProps {
+  menuItems: any;
+}
 
-const data = [
-  {
-    icon: Cloud,
-    title: "Python",
-    description:
-      "My first scripting language. Started as an undergrad doing mathematical modelling and expanded from there!",
-  },
-];
-
-const Menu = () => {
-  const [menuItems, setMenuItems] = useState<any[]>([]);
-
-  const pullMenu = () => {
-    INTENTIONAL ERR - FIX!!!!
-    fetch("https://codec-notion-server.herokuapp.com/menu")
-      .then((response) => response.json())
-      .then((payload) => setMenuItems(payload));
-  };
-
-  useEffect(() => {
-    pullMenu();
-    console.log(menuItems);
-  }, []);
-
-  let items = menuItems.map((entry) => {
+const Menu = ({ menuItems }: menuProps) => {
+  let items = menuItems.map((entry: any) => {
     console.log(entry);
     return (
       <Tile
-        key={"Project_" + entry.properties.Name.title.plain_text}
-        icon={entry.icon.emoji}
-        title={entry.properties.Name.title.plain_text}
-        description={"None"}
+        to={"/codec/" + entry.url.split("/").at(-1).split("-").at(-1)}
+        key={"Project_" + entry.properties.Name.title[0].text.content}
+        icon={entry.cover.external.url}
+        title={entry.properties.Name.title[0].text.content}
+        description={entry.description}
       />
     );
   });
