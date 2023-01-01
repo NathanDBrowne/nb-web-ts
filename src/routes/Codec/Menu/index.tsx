@@ -1,7 +1,7 @@
 import Header from "../../../components/Header";
 import HeroSection from "../../../components/HeroSection";
 import SideBar from "../../../components/SideBar";
-import HeroVideo from "../../../media/videos/solar_system.mp4";
+import HeroVideo from "../../../media/videos/matrix.mp4";
 
 import { useState, useEffect } from "react";
 

@@ -1,0 +1,34 @@
+.TableContainer {
+  padding: 20px;
+  padding-top: 100px;
+  background-color: #101010;
+}
+
+.BackButton {
+  text-decoration: none;
+}
+
+.ListLink {
+  border-radius: 50px;
+  padding: 14px 48px;
+  max-width: 80px;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  color: #eee;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  background: #101010;
+  border-style: solid;
+  border-width: 1px;
+  font-weight: 300;
+}
+.ListLink:hover {
+  cursor: pointer;
+  background-color: #7e42ff;
+  transition: all 0.2s ease-in-out;
+}

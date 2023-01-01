@@ -33,6 +33,7 @@ const CodecSection = () => {
         .then((payload) =>
           payload.map((x: any) => ({
             name: x.properties.Name.title[0].text.content,
+            last_edited: x.properties["Last edited time"].last_edited_time,
             id: x.id,
           }))
         )
@@ -46,7 +47,10 @@ const CodecSection = () => {
     <div>
       <Header logoText="CODEC" toggle={toggle} content={navContent} />
       <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
-      <SectionList sectionInfo={sectionInfo} />
+      <SectionList
+        headers={["Name", "Last Edited", "Article"]}
+        sectionInfo={sectionInfo}
+      />
     </div>
   );
 };
