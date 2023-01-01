@@ -3,9 +3,12 @@ import "./styles.css";
 import Header from "../../../components/Header";
 import SideBar from "../../../components/SideBar";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Footer from "../../../components/Footer";
 import { NotionElement } from "../../../components/Notion/elements";
+import ArticleHero from "../../../components/ArticleHero";
+
+import SpacePic from "../../../media/images/space.jpg";
 
 const ConvertArticle = (elem: any) => {
   try {
@@ -24,6 +27,10 @@ const ConvertArticle = (elem: any) => {
 const Article = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [articleInfo, setArticleInfo] = useState<any>([]);
+
+  const { state } = useLocation();
+  console.log("state", state);
+  const { title } = state; // Read values passed on state
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -58,14 +65,23 @@ const Article = () => {
     <>
       <Header logoText="CODEC" toggle={toggle} content={navContent} />
       <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
+      <ArticleHero
+        background={SpacePic}
+        style="CodecBg"
+        title={title}
+        text="something"
+      />
       <div
         style={{
           padding: "30px",
-          paddingTop: "100px",
+          paddingTop: "10px",
           background: "#101010",
           color: "#fff",
         }}
       >
+        <Link to="/codec">
+          <button>Codec</button>
+        </Link>
         <div>{articleInfo}</div>
 
         <Link to="/codec">
