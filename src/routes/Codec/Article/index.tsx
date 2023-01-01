@@ -5,58 +5,15 @@ import SideBar from "../../../components/SideBar";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Footer from "../../../components/Footer";
-import { CopyBlock } from "react-code-blocks";
+import { NotionElement } from "../../../components/Notion/elements";
 
 const ConvertArticle = (elem: any) => {
-  console.log(elem);
   try {
-    switch (elem.type) {
-      case "code":
-        return (
-          <CopyBlock
-            language={"jsx"}
-            text={elem.code.rich_text[0].text.content}
-            showLineNumbers={true}
-            theme="dracula"
-            wrapLines={true}
-            codeBlock
-          />
-        );
-      case "paragraph":
-        return <p>{elem.paragraph.rich_text.map((x: any) => x.plain_text)}</p>;
-      case "heading_1":
-        return (
-          <h1>{elem.heading_1.rich_text.map((x: any) => x.plain_text)}</h1>
-        );
-      case "heading_2":
-        return <h2>{elem.heading_2.rich_text[0].plain_text}</h2>;
-      case "heading_3":
-        return <h3>{elem.heading_3.rich_text[0].plain_text}</h3>;
-      case "table_of_contents":
-        return <></>;
-      case "embed":
-        return (
-          <button>
-            <a href={elem.embed.url}>{elem.embed.url}</a>
-          </button>
-        );
-      case "file":
-        return (
-          <button>
-            <a href={elem.file.file.url}>Download</a>
-          </button>
-        );
-      case "bookmark":
-        return (
-          <button>
-            <a href={elem.bookmark.url}>{elem.bookmark.url}</a>
-          </button>
-        );
-      default:
-        console.log("could not handle: ");
-        console.log(elem);
-        return <p>Not Handled: {elem.type}</p>;
-    }
+    return (
+      <>
+        <NotionElement obj={elem} />
+      </>
+    );
   } catch (error) {
     console.error("key mismatch!!");
     console.log(elem);
@@ -73,7 +30,7 @@ const Article = () => {
   };
   const { sectionId } = useParams();
 
-  const addr = "https://codec-notion-server.herokuapp.com/article/" + sectionId;
+  const addr = process.env.REACT_APP_API_ROUTE + "/article/" + sectionId;
 
   let navContent = [
     {
@@ -105,7 +62,7 @@ const Article = () => {
         style={{
           padding: "30px",
           paddingTop: "100px",
-          background: "#000",
+          background: "#101010",
           color: "#fff",
         }}
       >

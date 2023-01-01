@@ -55,7 +55,7 @@ const App = () => {
 
   useEffect(() => {
     const pullMenu = () => {
-      fetch("https://codec-notion-server.herokuapp.com/menu")
+      fetch(process.env.REACT_APP_API_ROUTE + "/menu")
         .then((response) => response.json())
         .then((payload) => setMenuItems(payload));
     };

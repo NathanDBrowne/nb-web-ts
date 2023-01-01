@@ -15,8 +15,7 @@ const CodecSection = () => {
   };
   const { sectionId } = useParams();
 
-  const addr =
-    "https://codec-notion-server.herokuapp.com/stack-item/" + sectionId;
+  const addr = process.env.REACT_APP_API_ROUTE + "/stack-item/" + sectionId;
 
   let navContent = [
     {
