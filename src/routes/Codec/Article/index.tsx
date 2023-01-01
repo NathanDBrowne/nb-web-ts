@@ -4,7 +4,7 @@ import Header from "../../../components/Header";
 import SideBar from "../../../components/SideBar";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
+import Footer from "../../../components/Footer";
 import { CopyBlock } from "react-code-blocks";
 
 const ConvertArticle = (elem: any) => {
@@ -12,11 +12,22 @@ const ConvertArticle = (elem: any) => {
   try {
     switch (elem.type) {
       case "code":
-        return <h3>{elem.code.rich_text[0].text.content}</h3>;
+        return (
+          <CopyBlock
+            language={"jsx"}
+            text={elem.code.rich_text[0].text.content}
+            showLineNumbers={true}
+            theme="dracula"
+            wrapLines={true}
+            codeBlock
+          />
+        );
       case "paragraph":
-        return <p>{elem.paragraph.rich_text[0].plain_text}</p>;
+        return <p>{elem.paragraph.rich_text.map((x: any) => x.plain_text)}</p>;
       case "heading_1":
-        return <h1>{elem.heading_1.rich_text[0].plain_text}</h1>;
+        return (
+          <h1>{elem.heading_1.rich_text.map((x: any) => x.plain_text)}</h1>
+        );
       case "heading_2":
         return <h2>{elem.heading_2.rich_text[0].plain_text}</h2>;
       case "heading_3":
@@ -27,6 +38,12 @@ const ConvertArticle = (elem: any) => {
         return (
           <button>
             <a href={elem.embed.url}>{elem.embed.url}</a>
+          </button>
+        );
+      case "file":
+        return (
+          <button>
+            <a href={elem.file.file.url}>Download</a>
           </button>
         );
       case "bookmark":
@@ -81,15 +98,25 @@ const Article = () => {
   }, []);
 
   return (
-    <div style={{ padding: "30px", paddingTop: "100px" }}>
+    <>
       <Header logoText="CODEC" toggle={toggle} content={navContent} />
       <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
-      <div>{articleInfo}</div>
+      <div
+        style={{
+          padding: "30px",
+          paddingTop: "100px",
+          background: "#000",
+          color: "#fff",
+        }}
+      >
+        <div>{articleInfo}</div>
 
-      <Link to="/codec">
-        <button>Back</button>
-      </Link>
-    </div>
+        <Link to="/codec">
+          <button>Codec</button>
+        </Link>
+      </div>
+      <Footer />
+    </>
   );
 };
 
