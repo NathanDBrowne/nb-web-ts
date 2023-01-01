@@ -30,23 +30,79 @@ export const CodeBlock = ({ lang, text }: CodeBlockProps) => {
   );
 };
 
+type ParseCodeProps = { isCode: boolean; text: string };
+const ParseCode = ({ isCode, text }: ParseCodeProps) => {
+  let ret;
+  switch (isCode) {
+    case true:
+      ret = (
+        <code
+          style={{ color: "#EB5757", background: "rgba(135,131,120,0.15)" }}
+        >
+          {text}
+        </code>
+      );
+      break;
+
+    default:
+      ret = text;
+      break;
+  }
+  return <>{ret}</>;
+};
+
 type TextElemProps = { rich_text: any; elem_type: string };
 export const TextElem = ({ rich_text, elem_type }: TextElemProps) => {
   let fullString = rich_text.map((x: any) => x.plain_text);
   let elem;
-
   switch (elem_type) {
     case "heading_1":
-      elem = <h1>{fullString}</h1>;
+      elem = (
+        <h1>
+          {rich_text.map((substr: any) => (
+            <ParseCode
+              isCode={substr.annotations.code}
+              text={substr.text.content}
+            />
+          ))}
+        </h1>
+      );
       break;
     case "heading_2":
-      elem = <h2>{fullString}</h2>;
+      elem = (
+        <h2>
+          {rich_text.map((substr: any) => (
+            <ParseCode
+              isCode={substr.annotations.code}
+              text={substr.text.content}
+            />
+          ))}
+        </h2>
+      );
       break;
     case "heading_3":
-      elem = <h3>{fullString}</h3>;
+      elem = (
+        <h3>
+          {rich_text.map((substr: any) => (
+            <ParseCode
+              isCode={substr.annotations.code}
+              text={substr.text.content}
+            />
+          ))}
+        </h3>
+      );
       break;
     case "paragraph":
-      elem = <p>{fullString}</p>;
+      elem = (
+        <p>
+          {rich_text.map((substr: any) => (
+            <ParseCode
+              isCode={substr.annotations.code}
+              text={substr.text.content}
+            />
+          ))}
+        </p>
+      );
       break;
   }
   return <>{elem}</>;
