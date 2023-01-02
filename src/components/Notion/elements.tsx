@@ -1,5 +1,6 @@
 import { CopyBlock, monokai } from "react-code-blocks";
 import { HyperLink } from "../Button";
+import "./styles.css";
 
 type CodeBlockProps = { lang: string; text: string };
 export const CodeBlock = ({ lang, text }: CodeBlockProps) => {
@@ -109,6 +110,20 @@ export const TextElem = ({ rich_text, elem_type }: TextElemProps) => {
         </p>
       );
       break;
+    case "callout":
+      console.log(rich_text);
+      elem = (
+        <div className="Callout">
+          {"💡" + " "}
+          {rich_text.map((substr: any) => (
+            <ParseCode
+              isCode={substr.annotations.code}
+              text={substr.text.content}
+            />
+          ))}
+        </div>
+      );
+      break;
   }
   return <>{elem}</>;
 };
@@ -117,7 +132,9 @@ export const NotionElement = (obj: any) => {
   obj = obj.obj; //I don't know why this is necessary
 
   if (
-    ["heading_1", "heading_2", "heading_3", "paragraph"].indexOf(obj.type) > -1
+    ["heading_1", "heading_2", "heading_3", "paragraph", "callout"].indexOf(
+      obj.type
+    ) > -1
   ) {
     return (
       <TextElem rich_text={obj[obj.type].rich_text} elem_type={obj.type} />
