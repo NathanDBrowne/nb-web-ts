@@ -9,6 +9,7 @@ import { RouteLink } from "../../../components/Button";
 import { useState, useEffect } from "react";
 import ArticleHero from "../../../components/ArticleHero";
 import SpacePic from "../../../media/images/space.jpg";
+import Footer from "../../../components/Footer";
 
 const CodecSection = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +62,13 @@ const CodecSection = () => {
         <Loader />
       ) : (
         <div>
-          <Header logoText="CODEC" toggle={toggle} content={navContent} />
+          <Header
+            logoText="CODEC"
+            toggle={toggle}
+            content={navContent}
+            logoType="route"
+            logoTo="/codec"
+          />
           <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
           <ArticleHero
             background={SpacePic}
@@ -75,6 +82,7 @@ const CodecSection = () => {
             sectionTitle={sectionTitle}
             sectionId={sectionId || ""}
           />
+          <Footer isCodec={true} logoType="route" logoTo="/" />
         </div>
       )}
     </>

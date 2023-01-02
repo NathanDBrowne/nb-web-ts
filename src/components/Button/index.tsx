@@ -124,3 +124,42 @@ export const RouteLink = ({
     );
   }
 };
+
+type HeaderLinkProps = {
+  text: string;
+  className: string;
+  to: string;
+  btnType: string;
+};
+export const HeaderItem = ({
+  text,
+  className,
+  to,
+  btnType,
+}: HeaderLinkProps) => {
+  let ButtonClass;
+
+  switch (btnType) {
+    case "scroll":
+      ButtonClass = ScrollLink;
+      break;
+
+    case "hyperlink":
+      ButtonClass = HyperLink;
+      break;
+
+    case "route":
+      ButtonClass = RouteLink;
+      break;
+
+    default:
+      ButtonClass = RouteLink;
+      break;
+  }
+
+  return (
+    <li className="HeaderItem" key={"headerItem_" + text}>
+      <ButtonClass text={text} className={className} to={to} />
+    </li>
+  );
+};

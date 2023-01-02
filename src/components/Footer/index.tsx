@@ -3,9 +3,11 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TelegramIcon from "@mui/icons-material/Telegram";
 
-import { ScrollLink, HyperLink } from "../Button";
+import { ScrollLink, HyperLink, HeaderItem } from "../Button";
 
-function Footer() {
+type FooterProps = { isCodec?: boolean; logoTo: string; logoType: string };
+
+function Footer({ isCodec = false, logoTo, logoType }: FooterProps) {
   return (
     <div className="Container" id={"contact"}>
       <div className="Wrap">
@@ -18,12 +20,17 @@ function Footer() {
             </div>
             <div className="LinkItems">
               <h1 className="LinkTitle">About Me</h1>
-              <ScrollLink
-                text="Projects"
-                className="FooterLink"
-                to="projects"
-              />
-              <ScrollLink text="Stack" className="FooterLink" to="stack" />
+              {!isCodec && (
+                <>
+                  <ScrollLink
+                    text="Projects"
+                    className="FooterLink"
+                    to="projects"
+                  />
+                  <ScrollLink text="Stack" className="FooterLink" to="stack" />
+                </>
+              )}
+
               <HyperLink
                 className="FooterLink"
                 to="https://github.com/NathanDBrowne"
@@ -48,10 +55,11 @@ function Footer() {
       </div>
       <div className="SocialMedia">
         <div className="SocialMediaWrap">
-          <ScrollLink
-            className="SocialLogo"
-            to="hero"
+          <HeaderItem
+            to={logoTo}
             text="Nate Browne 2023"
+            className="SocialLogo"
+            btnType={logoType}
           />
           <p className="WebsiteRights">Site made with React.js</p>
           <div className="SocialIcons">

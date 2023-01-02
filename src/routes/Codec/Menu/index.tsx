@@ -1,7 +1,7 @@
 import Header from "../../../components/Header";
 import HeroSection from "../../../components/HeroSection";
 import SideBar from "../../../components/SideBar";
-import HeroVideo from "../../../media/videos/matrix.mp4";
+import HeroVideo from "../../../media/videos/chain.mp4";
 
 import Loader from "../../../components/Loader";
 
@@ -90,10 +90,17 @@ const App = () => {
         <Loader />
       ) : (
         <>
-          <Header logoText="CODEC" toggle={toggle} content={navContent} />
+          <Header
+            logoText="CODEC"
+            toggle={toggle}
+            content={navContent}
+            logoType="scroll"
+            logoTo="header"
+          />
           <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
           <HeroSection
             background={HeroVideo}
+            height="600px"
             style="CodecBg"
             title="Welcome to CODEC."
             text={"Notes for the future me... who has forgotten stuff."}
@@ -102,7 +109,7 @@ const App = () => {
             buttonTo="menu"
           />
           <Menu menuItems={menuItems} />
-          <Footer />
+          <Footer isCodec={true} logoType="route" logoTo="/" />
         </>
       )}
     </>

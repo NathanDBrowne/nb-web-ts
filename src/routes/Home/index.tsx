@@ -51,7 +51,13 @@ const App = () => {
 
   return (
     <div>
-      <Header logoText="Nate Browne" toggle={toggle} content={navContent} />
+      <Header
+        logoText="Nate Browne"
+        toggle={toggle}
+        content={navContent}
+        logoType="scroll"
+        logoTo="hero"
+      />
       <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
       <HeroSection
         background={HeroVideo}
@@ -65,7 +71,7 @@ const App = () => {
       />
       <Projects id="projects" />
       <Stack />
-      <Footer />
+      <Footer logoType="scroll" logoTo="hero" />
     </div>
   );
 };

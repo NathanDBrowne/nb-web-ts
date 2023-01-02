@@ -2,24 +2,20 @@ import { useState, useEffect } from "react";
 import "./styles.css";
 import { IconContext } from "react-icons/lib";
 import { FaBars } from "react-icons/fa";
-
-import { ScrollLink, HyperLink, RouteLink } from "../Button";
-
-type HeaderLinkProps = {
-  text: string;
-  className: string;
-  to: string;
-  btnType: string;
-};
+import { HeaderItem } from "../Button";
 
 export default function Header({
   logoText,
   toggle,
   content,
+  logoType,
+  logoTo,
 }: {
   logoText: string;
   toggle: any;
   content: any;
+  logoType: string;
+  logoTo: string;
 }) {
   const [scrollHeader, setScrollHeader] = useState(false);
 
@@ -29,35 +25,6 @@ export default function Header({
     } else {
       setScrollHeader(false);
     }
-  };
-
-  // we define the sidebar item here so we can access the toggle variable in the sidebar scope
-  const HeaderItem = ({ text, className, to, btnType }: HeaderLinkProps) => {
-    let ButtonClass;
-
-    switch (btnType) {
-      case "scroll":
-        ButtonClass = ScrollLink;
-        break;
-
-      case "hyperlink":
-        ButtonClass = HyperLink;
-        break;
-
-      case "route":
-        ButtonClass = RouteLink;
-        break;
-
-      default:
-        ButtonClass = RouteLink;
-        break;
-    }
-
-    return (
-      <li className="HeaderItem" key={"headerItem_" + text}>
-        <ButtonClass text={text} className={className} to={to} />
-      </li>
-    );
   };
 
   useEffect(() => {
@@ -75,11 +42,11 @@ export default function Header({
         }
       >
         <div className="HeaderContainer">
-          <ScrollLink
-            to="hero"
+          <HeaderItem
+            to={logoTo}
             text={logoText}
             className="Logo"
-            style={{ fontWeight: 500 }}
+            btnType={logoType}
           />
           <div className="MobileIcon" onClick={toggle}>
             <FaBars />

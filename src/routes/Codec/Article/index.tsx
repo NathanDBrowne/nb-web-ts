@@ -32,7 +32,6 @@ const Article = () => {
   const [loading, setLoading] = useState(false);
 
   const { state } = useLocation();
-  console.log("state", state);
   const { title, prevId, sectionTitle } = state; // Read values passed on state
 
   const navigate = useNavigate();
@@ -81,7 +80,13 @@ const Article = () => {
         <Loader />
       ) : (
         <>
-          <Header logoText="CODEC" toggle={toggle} content={navContent} />
+          <Header
+            logoText="CODEC"
+            toggle={toggle}
+            content={navContent}
+            logoType="route"
+            logoTo="/codec"
+          />
           <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
           <ArticleHero
             background={SpacePic}
@@ -91,59 +96,70 @@ const Article = () => {
           />
           <div
             style={{
-              padding: "30px",
-              paddingTop: "10px",
               background: "#101010",
-              color: "#fff",
+              position: "relative",
+              maxWidth: "100%",
+              minHeight: "600px",
             }}
           >
             <div
               style={{
-                display: "flex",
-                background: "#222",
-                justifyContent: "center",
-                height: "40px",
+                color: "#fff",
+                margin: "auto",
+                maxWidth: "900px",
+                width: "inherit",
+                padding: "10px 30px",
               }}
             >
-              <RouteLink
-                onClick={handleClick}
-                to=""
-                text="Back"
-                className={"GeneralLink"}
-              />
-              <RouteLink
-                to=""
-                onClick={() => navigate("/codec")}
-                text="Codec"
-                className={"GeneralLink"}
-              />
-            </div>
+              <div
+                style={{
+                  display: "flex",
+                  background: "#222",
+                  justifyContent: "center",
+                  height: "40px",
+                }}
+              >
+                <RouteLink
+                  onClick={handleClick}
+                  to=""
+                  text="Back"
+                  className={"GeneralLink"}
+                />
+                <RouteLink
+                  to=""
+                  onClick={() => navigate("/codec")}
+                  text="Codec"
+                  className={"GeneralLink"}
+                />
+              </div>
 
-            <div>{articleInfo}</div>
+              <div style={{ padding: "10px" }}>{articleInfo}</div>
 
-            <div
-              style={{
-                display: "flex",
-                background: "#222",
-                justifyContent: "center",
-                height: "40px",
-              }}
-            >
-              <RouteLink
-                onClick={handleClick}
-                to=""
-                text="Back"
-                className={"GeneralLink"}
-              />
-              <RouteLink
-                to=""
-                onClick={() => navigate("/codec")}
-                text="Codec"
-                className={"GeneralLink"}
-              />
+              <div
+                style={{
+                  display: "flex",
+                  background: "#222",
+                  justifyContent: "center",
+                  height: "40px",
+                }}
+              >
+                <RouteLink
+                  onClick={handleClick}
+                  to=""
+                  text="Back"
+                  className={"GeneralLink"}
+                />
+                <RouteLink
+                  to=""
+                  onClick={() => navigate("/codec")}
+                  text="Codec"
+                  className={"GeneralLink"}
+                />
+              </div>
             </div>
           </div>
-          <Footer />
+
+          <Footer isCodec={true} logoType="route" logoTo="/" />
         </>
       )}
     </>
