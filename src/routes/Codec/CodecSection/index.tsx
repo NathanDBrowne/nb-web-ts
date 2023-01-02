@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import Header from "../../../components/Header";
 import SideBar from "../../../components/SideBar";
@@ -50,6 +50,7 @@ const CodecSection = () => {
       <SectionList
         headers={["Name", "Last Edited", "Article"]}
         sectionInfo={sectionInfo}
+        sectionId={sectionId || ""}
       />
     </div>
   );

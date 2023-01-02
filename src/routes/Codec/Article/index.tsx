@@ -8,6 +8,8 @@ import Footer from "../../../components/Footer";
 import { NotionElement } from "../../../components/Notion/elements";
 import ArticleHero from "../../../components/ArticleHero";
 
+import { RouteLink } from "../../../components/Button";
+
 import SpacePic from "../../../media/images/space.jpg";
 
 const ConvertArticle = (elem: any) => {
@@ -30,7 +32,7 @@ const Article = () => {
 
   const { state } = useLocation();
   console.log("state", state);
-  const { title } = state; // Read values passed on state
+  const { title, prevId } = state; // Read values passed on state
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -79,14 +81,39 @@ const Article = () => {
           color: "#fff",
         }}
       >
-        <Link to="/codec">
-          <button>Codec</button>
-        </Link>
+        <div
+          style={{
+            display: "flex",
+            background: "#222",
+            justifyContent: "center",
+            height: "40px",
+          }}
+        >
+          <RouteLink
+            to={"/codec/" + prevId}
+            text="Back"
+            className={"GeneralLink"}
+          />
+          <RouteLink to="/codec" text="Codec" className={"GeneralLink"} />
+        </div>
+
         <div>{articleInfo}</div>
 
-        <Link to="/codec">
-          <button>Codec</button>
-        </Link>
+        <div
+          style={{
+            display: "flex",
+            background: "#222",
+            justifyContent: "center",
+            height: "40px",
+          }}
+        >
+          <RouteLink
+            to={"/codec/" + prevId}
+            text="Back"
+            className={"GeneralLink"}
+          />
+          <RouteLink to="/codec" text="Codec" className={"GeneralLink"} />
+        </div>
       </div>
       <Footer />
     </>
