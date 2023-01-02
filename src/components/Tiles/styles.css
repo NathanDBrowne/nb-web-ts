@@ -6,6 +6,13 @@
   background: #727d71;
 }
 
+.CodecTileContainer {
+  height: 1500px;
+  display: flex;
+  flex-direction: column;
+  background: #727d71;
+}
+
 /* div */
 .TileWrapper {
   max-width: 1000px;
