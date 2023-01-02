@@ -103,13 +103,7 @@ export const HyperLink = ({
   );
 };
 
-export const RouteLink = ({
-  text,
-  to,
-  style,
-  className,
-  onClick,
-}: ButtonProps) => {
+export const RouteLink = ({ text, to, style, className }: ButtonProps) => {
   return (
     <LinkR className={className} to={to} style={style}>
       {text}

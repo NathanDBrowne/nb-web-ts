@@ -6,12 +6,13 @@ type TileProps = {
   icon: string;
   title: string;
   description: string;
+  style?: string;
 };
 
-const Tile = ({ to, icon, title, description }: TileProps) => {
+const Tile = ({ to, icon, title, description, style }: TileProps) => {
   return (
     <Link to={to || "/"} style={{ textDecoration: "none", color: "#000" }}>
-      <div className="TileCard">
+      <div className={style || "TileCard"}>
         <img className="TileImg" alt="" src={icon} />
         <h2 className="TileH2">{title}</h2>
         <p className="TileP">{description}</p>

@@ -37,7 +37,11 @@ const ParseCode = ({ isCode, text }: ParseCodeProps) => {
     case true:
       ret = (
         <code
-          style={{ color: "#EB5757", background: "rgba(135,131,120,0.15)" }}
+          style={{
+            color: "#EB5757",
+            background: "rgba(135,131,120,0.15)",
+            font: "inherit",
+          }}
         >
           {text}
         </code>
