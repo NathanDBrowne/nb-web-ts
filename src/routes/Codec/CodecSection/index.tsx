@@ -1,19 +1,27 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 
 import Header from "../../../components/Header";
 import SideBar from "../../../components/SideBar";
 import SectionList from "../../../components/SectionList";
 
+import Loader from "../../../components/Loader";
+import { RouteLink } from "../../../components/Button";
 import { useState, useEffect } from "react";
+import ArticleHero from "../../../components/ArticleHero";
+import SpacePic from "../../../media/images/space.jpg";
 
 const CodecSection = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [sectionInfo, setSectionInfo] = useState<any>([]);
+  const [loading, setLoading] = useState(false);
 
   const toggle = () => {
     setIsOpen(!isOpen);
   };
   const { sectionId } = useParams();
+
+  const { state } = useLocation();
+  const { title, prevId, sectionTitle } = state; // Read values passed on state
 
   const addr = process.env.REACT_APP_API_ROUTE + "/stack-item/" + sectionId;
 
@@ -27,6 +35,7 @@ const CodecSection = () => {
   ];
 
   useEffect(() => {
+    setLoading(true);
     const pullMenu = () => {
       fetch(addr)
         .then((response) => response.json())
@@ -37,22 +46,38 @@ const CodecSection = () => {
             id: x.id,
           }))
         )
-        .then((payload) => setSectionInfo(payload));
+        .then((payload) => {
+          setLoading(false);
+          setSectionInfo(payload);
+        });
     };
     pullMenu();
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   return (
-    <div>
-      <Header logoText="CODEC" toggle={toggle} content={navContent} />
-      <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
-      <SectionList
-        headers={["Name", "Last Edited", "Article"]}
-        sectionInfo={sectionInfo}
-        sectionId={sectionId || ""}
-      />
-    </div>
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div>
+          <Header logoText="CODEC" toggle={toggle} content={navContent} />
+          <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
+          <ArticleHero
+            background={SpacePic}
+            style="CodecBg"
+            title={sectionTitle}
+            text="something"
+          />
+          <SectionList
+            headers={["Name", "Last Edited", "Article"]}
+            sectionInfo={sectionInfo}
+            sectionTitle={sectionTitle}
+            sectionId={sectionId || ""}
+          />
+        </div>
+      )}
+    </>
   );
 };
 

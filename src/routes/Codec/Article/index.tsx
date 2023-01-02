@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./styles.css";
 import Header from "../../../components/Header";
 import SideBar from "../../../components/SideBar";
@@ -11,6 +10,7 @@ import ArticleHero from "../../../components/ArticleHero";
 import { RouteLink } from "../../../components/Button";
 
 import SpacePic from "../../../media/images/space.jpg";
+import Loader from "../../../components/Loader";
 
 const ConvertArticle = (elem: any) => {
   try {
@@ -29,10 +29,17 @@ const ConvertArticle = (elem: any) => {
 const Article = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [articleInfo, setArticleInfo] = useState<any>([]);
+  const [loading, setLoading] = useState(false);
 
   const { state } = useLocation();
   console.log("state", state);
-  const { title, prevId } = state; // Read values passed on state
+  const { title, prevId, sectionTitle } = state; // Read values passed on state
+
+  const navigate = useNavigate();
+  const handleClick = () =>
+    navigate("/codec/" + prevId, {
+      state: { title: title, prevId: prevId, sectionTitle: sectionTitle },
+    });
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -51,71 +58,94 @@ const Article = () => {
   ];
 
   useEffect(() => {
+    setLoading(true);
+
     const pullInfo = () => {
+      setLoading(true);
       fetch(addr)
         .then((response) => response.json())
         .then((payload) => payload.map((x: any) => ConvertArticle(x)))
-        .then((payload) => setArticleInfo(payload));
+        .then((payload) => {
+          setLoading(false);
+          setArticleInfo(payload);
+        });
     };
     pullInfo();
 
-    console.log(articleInfo);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   return (
     <>
-      <Header logoText="CODEC" toggle={toggle} content={navContent} />
-      <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
-      <ArticleHero
-        background={SpacePic}
-        style="CodecBg"
-        title={title}
-        text="something"
-      />
-      <div
-        style={{
-          padding: "30px",
-          paddingTop: "10px",
-          background: "#101010",
-          color: "#fff",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            background: "#222",
-            justifyContent: "center",
-            height: "40px",
-          }}
-        >
-          <RouteLink
-            to={"/codec/" + prevId}
-            text="Back"
-            className={"GeneralLink"}
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <Header logoText="CODEC" toggle={toggle} content={navContent} />
+          <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
+          <ArticleHero
+            background={SpacePic}
+            style="CodecBg"
+            title={title}
+            text="something"
           />
-          <RouteLink to="/codec" text="Codec" className={"GeneralLink"} />
-        </div>
+          <div
+            style={{
+              padding: "30px",
+              paddingTop: "10px",
+              background: "#101010",
+              color: "#fff",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                background: "#222",
+                justifyContent: "center",
+                height: "40px",
+              }}
+            >
+              <RouteLink
+                onClick={handleClick}
+                to=""
+                text="Back"
+                className={"GeneralLink"}
+              />
+              <RouteLink
+                to=""
+                onClick={() => navigate("/codec")}
+                text="Codec"
+                className={"GeneralLink"}
+              />
+            </div>
 
-        <div>{articleInfo}</div>
+            <div>{articleInfo}</div>
 
-        <div
-          style={{
-            display: "flex",
-            background: "#222",
-            justifyContent: "center",
-            height: "40px",
-          }}
-        >
-          <RouteLink
-            to={"/codec/" + prevId}
-            text="Back"
-            className={"GeneralLink"}
-          />
-          <RouteLink to="/codec" text="Codec" className={"GeneralLink"} />
-        </div>
-      </div>
-      <Footer />
+            <div
+              style={{
+                display: "flex",
+                background: "#222",
+                justifyContent: "center",
+                height: "40px",
+              }}
+            >
+              <RouteLink
+                onClick={handleClick}
+                to=""
+                text="Back"
+                className={"GeneralLink"}
+              />
+              <RouteLink
+                to=""
+                onClick={() => navigate("/codec")}
+                text="Codec"
+                className={"GeneralLink"}
+              />
+            </div>
+          </div>
+          <Footer />
+        </>
+      )}
     </>
   );
 };

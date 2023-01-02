@@ -15,19 +15,26 @@ import { RouteLink } from "../Button";
 type sectionProps = {
   headers: any;
   sectionInfo: any;
+  sectionTitle: string;
   sectionId: string;
 };
 
-const SectionList = ({ headers, sectionInfo, sectionId }: sectionProps) => {
+const SectionList = ({
+  headers,
+  sectionInfo,
+  sectionTitle,
+  sectionId,
+}: sectionProps) => {
   type cellProps = { k: string; v: string; label: string };
 
   const InferCellType = ({ k, v, label }: cellProps) => {
     let elem: any;
+
     const navigate = useNavigate();
 
     const handleClick = () =>
       navigate("/codec/articles/" + v, {
-        state: { title: label, prevId: sectionId },
+        state: { title: label, prevId: sectionId, sectionTitle: sectionTitle },
       });
 
     switch (["id"].indexOf(k) > -1) {
@@ -48,11 +55,24 @@ const SectionList = ({ headers, sectionInfo, sectionId }: sectionProps) => {
     }
     return <>{elem}</>;
   };
-  console.log(sectionInfo);
+
   return (
     <>
       <div className="TableContainer">
-        <TableContainer component={Paper} style={{ border: "1px solid #333" }}>
+        <div
+          style={{
+            display: "flex",
+            background: "#222",
+            justifyContent: "center",
+            height: "40px",
+          }}
+        >
+          <RouteLink to="/codec" text="Codec" className={"GeneralLink"} />
+        </div>
+        <TableContainer
+          component={Paper}
+          style={{ border: "1px solid #333", padding: "1px" }}
+        >
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow style={{ background: "#333" }}>
