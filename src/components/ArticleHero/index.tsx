@@ -10,7 +10,7 @@ type ArticleHeroProps = {
 const ArticleHero = ({ background, style, title, text }: ArticleHeroProps) => {
   return (
     <div className="ArticleHeroContainer" id={"hero"}>
-      <div className="HeroBg">
+      <div className="ArticleHeroBg">
         <img className={style || "VideoBg"} src={background} />
       </div>
       <div className="HeroContent">

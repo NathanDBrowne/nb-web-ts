@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 30px;
   height: 150px;
   position: relative;
   z-index: 1;
@@ -37,6 +36,14 @@
   object-fit: cover;
   background: #101010;
   filter: brightness(70%);
+}
+.ArticleHeroBg {
+  height: inherit;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  background: #101010;
+  filter: brightness(120%);
 }
 
 /* applies to div */
