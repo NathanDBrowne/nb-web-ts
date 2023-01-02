@@ -69,47 +69,50 @@ const SectionList = ({
         >
           <RouteLink to="/codec" text="Codec" className={"GeneralLink"} />
         </div>
-        <TableContainer
-          component={Paper}
-          style={{ border: "1px solid #333", padding: "1px" }}
-        >
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow style={{ background: "#333" }}>
-                {headers.map((header: string) => (
-                  <TableCell
-                    align="right"
-                    style={{ color: "#fff", fontFamily: "inherit" }}
-                  >
-                    <h3 style={{ fontWeight: "bold" }}>{header}</h3>
-                  </TableCell>
-                ))}
-              </TableRow>
-            </TableHead>
-
-            <TableBody>
-              {sectionInfo.map((row: any) => (
-                <TableRow
-                  key={row.id}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                >
-                  {Object.entries(row).map(([k, v]: any[]) => (
+        <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+          <TableContainer
+            component={Paper}
+            style={{ border: "1px solid #333", padding: "1px" }}
+          >
+            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+              <TableHead>
+                <TableRow style={{ background: "#333" }}>
+                  {headers.map((header: string) => (
                     <TableCell
                       align="right"
-                      style={{
-                        fontFamily: "inherit",
-                        color: "#fff",
-                        background: "#101010",
-                      }}
+                      style={{ color: "#fff", fontFamily: "inherit" }}
                     >
-                      <InferCellType k={k} v={v} label={row.name} />
+                      <h3 style={{ fontWeight: "bold" }}>{header}</h3>
                     </TableCell>
                   ))}
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+
+              <TableBody>
+                {sectionInfo.map((row: any) => (
+                  <TableRow
+                    key={row.id}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    {Object.entries(row).map(([k, v]: any[]) => (
+                      <TableCell
+                        align="right"
+                        style={{
+                          fontFamily: "inherit",
+                          color: "#fff",
+                          background: "#101010",
+                        }}
+                      >
+                        <InferCellType k={k} v={v} label={row.name} />
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </div>
+
         <div
           style={{
             display: "flex",
@@ -121,7 +124,6 @@ const SectionList = ({
           <RouteLink to="/codec" text="Codec" className={"GeneralLink"} />
         </div>
       </div>
-      <Footer />
     </>
   );
 };

@@ -5,6 +5,7 @@ import DefaultVideo from "../../media/videos/stars.mp4";
 
 type HeroProps = {
   background?: any;
+  height?: string;
   style?: any;
   title: string;
   text: string;
@@ -15,6 +16,7 @@ type HeroProps = {
 
 const HeroSection = ({
   background,
+  height,
   style,
   title,
   text,
@@ -34,7 +36,11 @@ const HeroSection = ({
   }
 
   return (
-    <div className="HeroContainer" id={"hero"}>
+    <div
+      className="HeroContainer"
+      id={"hero"}
+      style={{ height: height || "1000px" }}
+    >
       <div className="HeroBg">
         <video
           className={style || "VideoBg"}
