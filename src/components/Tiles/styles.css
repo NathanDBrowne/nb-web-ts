@@ -7,7 +7,7 @@
 }
 
 .CodecTileContainer {
-  height: 850px;
+  height: 1050px;
   display: flex;
   flex-direction: column;
   background: #727d71;
@@ -29,7 +29,7 @@
     height: 1950px;
   }
   .CodecTileContainer {
-    height: 1100px;
+    height: 1300px;
   }
   .TileWrapper {
     grid-template-columns: 1fr 1fr;
@@ -40,7 +40,7 @@
     height: 3350px;
   }
   .CodecTileContainer {
-    height: 1750px;
+    height: 2350px;
   }
   .TileWrapper {
     grid-template-columns: 1fr;
