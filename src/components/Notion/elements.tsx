@@ -1,4 +1,5 @@
 import { CopyBlock, monokai } from "react-code-blocks";
+import { HyperLink } from "../Button";
 
 type CodeBlockProps = { lang: string; text: string };
 export const CodeBlock = ({ lang, text }: CodeBlockProps) => {
@@ -123,17 +124,26 @@ export const NotionElement = (obj: any) => {
     );
   } else if (["embed", "bookmark"].indexOf(obj.type) > -1) {
     return (
-      <button>
-        <a href={obj[obj.type].url}>{obj[obj.type].url}</a>
-      </button>
+      <div style={{ padding: "10px" }}>
+        <HyperLink
+          text={obj[obj.type].url}
+          to={obj[obj.type].url}
+          className="WideButton"
+        />
+      </div>
     );
   } else {
     switch (obj.type) {
       case "file":
         return (
-          <button>
-            <a href={obj.file.file.url}>Download</a>
-          </button>
+          <div style={{ padding: "10px" }}>
+            <HyperLink
+              text="Download"
+              to={obj.file.file.url}
+              className="WideButton"
+              style={{ maxWidth: "200px" }}
+            />
+          </div>
         );
       case "code":
         return (
