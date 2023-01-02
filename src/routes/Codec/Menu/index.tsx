@@ -22,12 +22,13 @@ const Menu = ({ menuItems }: menuProps) => {
         icon={entry.cover.external.url}
         title={entry.properties.Name.title[0].text.content}
         description={entry.description}
+        style="CodecTileCard"
       />
     );
   });
 
   return (
-    <div className="TileContainer" id="stack">
+    <div className="TileContainer" id="menu">
       <h1 className="TileH1">Menu</h1>
       <div className="TileWrapper">{items}</div>
     </div>
