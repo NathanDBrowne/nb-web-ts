@@ -1,5 +1,5 @@
 import { Link as LinkS } from "react-scroll";
-import { Link as LinkR } from "react-router-dom";
+import { Link, Link as LinkR } from "react-router-dom";
 
 import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 import { useState } from "react";
@@ -103,10 +103,24 @@ export const HyperLink = ({
   );
 };
 
-export const RouteLink = ({ text, to, style, className }: ButtonProps) => {
-  return (
-    <LinkR className={className} to={to} style={style}>
-      {text}
-    </LinkR>
-  );
+export const RouteLink = ({
+  to,
+  text,
+  style,
+  className,
+  onClick,
+}: ButtonProps) => {
+  if (to == "") {
+    return (
+      <div className={className} style={style} onClick={onClick}>
+        {text}
+      </div>
+    );
+  } else {
+    return (
+      <Link to={to} className={className} style={style}>
+        {text}
+      </Link>
+    );
+  }
 };
