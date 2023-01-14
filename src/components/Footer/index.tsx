@@ -15,11 +15,11 @@ function Footer({ isCodec = false, logoTo, logoType }: FooterProps) {
           <div className="LinksWrapper">
             <div className="LinkItems">
               <h1 className="LinkTitle">Reach Out</h1>
-              <div className="FooterLink">+44(0)7312 267 345</div>
-              <div className="FooterLink">nathandbrowne@gmail.com</div>
+              <div className="FooterLink">+44 (0) 7312 267 345</div>
+              <div className="FooterLink">nate@algonate.com</div>
             </div>
             <div className="LinkItems">
-              <h1 className="LinkTitle">About Me</h1>
+              <h1 className="LinkTitle">My stuff</h1>
               {!isCodec && (
                 <>
                   <ScrollLink
