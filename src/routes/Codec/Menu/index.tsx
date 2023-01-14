@@ -1,7 +1,7 @@
 import Header from "../../../components/Header";
 import HeroSection from "../../../components/HeroSection";
 import SideBar from "../../../components/SideBar";
-import HeroVideo from "../../../media/videos/chain.mp4";
+import HeroVideo from "../../../media/videos/waterfall.mp4";
 
 import Loader from "../../../components/Loader";
 
@@ -62,7 +62,7 @@ const App = () => {
   // they will automatically update together
   let navContent = [
     {
-      text: "NATE BROWNE",
+      text: "Nate",
       className: "GeneralLink",
       to: "/",
       isScroll: false,
@@ -91,7 +91,7 @@ const App = () => {
       ) : (
         <>
           <Header
-            logoText="CODEC"
+            logoText="Algonate"
             toggle={toggle}
             content={navContent}
             logoType="scroll"
@@ -100,10 +100,10 @@ const App = () => {
           <SideBar isOpen={isOpen} toggle={toggle} content={navContent} />
           <HeroSection
             background={HeroVideo}
-            height="600px"
+            height="700px"
             style="CodecBg"
-            title="Welcome to CODEC."
-            text={"Notes for the future me... who has forgotten stuff."}
+            title="Welcome to Algonate."
+            text={"A place for everything I want to remember."}
             scrolls={true}
             buttonText="Menu"
             buttonTo="menu"

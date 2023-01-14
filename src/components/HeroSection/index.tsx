@@ -48,6 +48,7 @@ const HeroSection = ({
           muted
           loop
           src={background || DefaultVideo}
+          style={{ filter: "brightness(70%)" }}
         />
       </div>
       <div className="HeroContent">
@@ -60,7 +61,15 @@ const HeroSection = ({
         >
           {title}
         </h1>
-        <p className="HeroP">{text}</p>
+        <p
+          className="HeroP"
+          style={{
+            textShadow:
+              "-1px -1px 6px #000, 1px -1px 6px #000, -1px 1px 6px #000, 1px 1px 6px #000",
+          }}
+        >
+          {text}
+        </p>
         <h2>{btnElem({ text: buttonText, to: buttonTo })}</h2>
       </div>
     </div>
