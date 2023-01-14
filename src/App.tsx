@@ -13,8 +13,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/codec" element={<Codec />} />
+        <Route path="/" element={<Codec />} />
+        <Route path="/nate" element={<Home />} />
         <Route path="/codec/:sectionId" element={<CodecSection />} />
         <Route path="/codec/articles/:sectionId" element={<Article />} />
         <Route path="*" element={<NotFound />} />
