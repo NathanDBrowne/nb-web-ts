@@ -35,7 +35,7 @@
   -o-object-fit: cover;
   object-fit: cover;
   background: #101010;
-  filter: brightness(70%);
+  filter: brightness(10%);
 }
 
 /* applies to div */

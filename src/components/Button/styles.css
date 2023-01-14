@@ -16,8 +16,8 @@
 }
 .HeroButton:hover {
   transition: all 0.2s ease-in-out;
-  box-shadow: -1px -1px 3px #7e42ff, 1px -1px 3px #7e42ff, -1px 1px 3px #7e42ff,
-    1px 1px 3px #7e42ff;
+  box-shadow: -1px -1px 3px #727d71, 1px -1px 3px #727d71, -1px 1px 3px #727d71,
+    1px 1px 3px #727d71;
   color: #fff;
   font-weight: 600;
 }
@@ -51,8 +51,8 @@
 .GeneralLink:hover {
   color: #fff;
   transition: all 0.2s ease-in-out;
-  text-shadow: -1px -1px 6px #7e42ff, 1px -1px 6px #7e42ff, -1px 1px 6px #7e42ff,
-    1px 1px 6px #7e42ff;
+  text-shadow: -1px -1px 6px #727d71, 1px -1px 6px #727d71, -1px 1px 6px #727d71,
+    1px 1px 6px #727d71;
   border-radius: 50px;
 }
 
@@ -66,8 +66,8 @@
 }
 .FooterLink:hover {
   color: #fff;
-  text-shadow: -1px -1px 3px #7e42ff, 1px -1px 3px #7e42ff, -1px 1px 3px #7e42ff,
-    1px 1px 3px #7e42ff;
+  text-shadow: -1px -1px 3px #727d71, 1px -1px 3px #727d71, -1px 1px 3px #727d71,
+    1px 1px 3px #727d71;
   cursor: pointer;
   transition: 0.3s ease-out;
 }
@@ -88,8 +88,8 @@
   cursor: pointer;
   color: #fff;
   transition: all 0.5s ease-in-out;
-  text-shadow: -1px -1px 3px #7e42ff, 1px -1px 3px #7e42ff, -1px 1px 3px #7e42ff,
-    1px 1px 3px #7e42ff;
+  text-shadow: -1px -1px 3px #727d71, 1px -1px 3px #727d71, -1px 1px 3px #727d71,
+    1px 1px 3px #727d71;
 }
 
 .WideButton {
@@ -115,6 +115,6 @@
   border-style: hidden;
   color: #eee;
   font-weight: 600;
-  box-shadow: -1px -1px 3px #7e42ff, 1px -1px 3px #7e42ff, -1px 1px 3px #7e42ff,
-    1px 1px 3px #7e42ff;
+  box-shadow: -1px -1px 3px #727d71, 1px -1px 3px #727d71, -1px 1px 3px #727d71,
+    1px 1px 3px #727d71;
 }
