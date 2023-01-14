@@ -37,7 +37,7 @@ export default function Header({
         className="Header"
         style={
           scrollHeader
-            ? { background: "#101010" }
+            ? { background: "#727d71" }
             : { background: "transparent" }
         }
       >
@@ -52,7 +52,6 @@ export default function Header({
             <FaBars />
           </div>
           <ul className="HeaderMenu">
-            {/* map an unknown number of sidebar items here */}
             {content.map((contentItem: any) => HeaderItem(contentItem))}
           </ul>
         </div>
